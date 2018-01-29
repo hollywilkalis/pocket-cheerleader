@@ -1,0 +1,17 @@
+{
+  "name": "pocket-cheerleader",
+  "description": "",
+  "main": "main.js",
+  "license": "MIT",
+  "homepage": "https://github.com/hollywilkalis/pocket-cheerleader",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.0.0"
+  }
+}
