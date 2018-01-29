@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SleepComponent implements OnInit {
 
+  days = [];
+
   constructor() { }
 
   ngOnInit() {
+    for (let i = 0; i < 31; i++) {
+      this.days.push(`day${i + 1}`)
+    }
   }
 
 }
