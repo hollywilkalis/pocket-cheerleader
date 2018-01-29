@@ -1,7 +1,6 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(25, 1fr);
-  grid-template-rows: repeat(31, 1fr);
   grid-gap: 1px;
   background-color: #fff;
   color: #444;
@@ -14,28 +13,21 @@
   font-size: 50%;
   display: flex;
 }
-.chkbx[type="checkbox"] {
-  height: 100%;
-  width: 100%;
-  opacity: .4;
-  // cursor: pointer;
-  // display: none;
-  &:checked {
-    opacity: 0;
-  }
+.chkbx {
+  display: none;
 }
-.chkbx[type="checkbox"] + label {
-  // display: inline-block;
+.chkbx + label{
   width: 100%;
   height: 100%;
-  // background-color: red;
+  border-radius: 5px;
 }
-.chkbx[type="checkbox"]:checked {
-
-
+.chkbx:checked + label{
+  // pointer-events: none;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-color: red;
 }
-
-
 
 .day {
   background-color: white;
