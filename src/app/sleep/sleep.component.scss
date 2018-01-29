@@ -1,0 +1,47 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(25, 1fr);
+  grid-template-rows: repeat(31, 1fr);
+  grid-gap: 1px;
+  background-color: #fff;
+  color: #444;
+}
+
+.box {
+  background-color: #2a8fa7;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 50%;
+  display: flex;
+}
+.chkbx[type="checkbox"] {
+  height: 100%;
+  width: 100%;
+  opacity: .4;
+  // cursor: pointer;
+  // display: none;
+  &:checked {
+    opacity: 0;
+  }
+}
+.chkbx[type="checkbox"] + label {
+  // display: inline-block;
+  width: 100%;
+  height: 100%;
+  // background-color: red;
+}
+.chkbx[type="checkbox"]:checked {
+
+
+}
+
+
+
+.day {
+  background-color: white;
+  color: black;
+}
+
+.head-row {
+  @extend .day;
+}
