@@ -1,0 +1,36 @@
+{ "users": [{
+    "firstName": "Griffin",
+    "userName": "griffinl",
+    "password": "password1234",
+    "id": "1",
+    "moods": [{
+        "userName": "griffinl",
+        "month": "January",
+        "day": 1,
+        "moodScore": 8,
+        "moodNotes": "feeling pretty good"
+        }, {
+        "userName": "griffinl",
+        "month": "January",
+        "day": 4,
+        "moodScore": 3,
+        "moodNotes": "grumpy, didn't get enough sleep"
+        }, {
+        "userName": "griffinl",
+        "month": "January",
+        "day": 20,
+        "moodScore": 6,
+        "moodNotes": "okay but need more coffee"
+      }]
+    }, {
+    "firstName": "Lena",
+    "userName": "lenah",
+    "password": "password1234",
+    "id": "2"
+    }, {
+    "firstName": "Kevin",
+    "userName": "kevinb",
+    "password": "password1234",
+    "id": "3"
+  }]
+}

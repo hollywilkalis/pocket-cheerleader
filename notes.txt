@@ -1,0 +1,15 @@
+.day
+  (click)=editForm
+
+edit form
+date?
+moods:
+  happy/joyful [YELLOW]
+  productive/motivated/energetic [GREEN]
+  normal/content [PINK]
+  depressed/lonely/empty [BLUE]
+  anxious/stressed [PURPLE]
+  sick/tired/lethargic [ORANGE]
+  angry/frustrated/irritable [RED]
+notes: textarea (500px-by-800px?)
+  placeholder="notes - did you take medication? sleep a lot?  the in-laws visited?  etc."

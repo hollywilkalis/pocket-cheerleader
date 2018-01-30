@@ -8,8 +8,18 @@ import { routing } from './app.routing';
 import { SleepComponent } from './sleep/sleep.component';
 import { MoodComponent } from './mood/mood.component';
 import { AboutComponent } from './about/about.component';
-import { SleepTimePipePipe } from './sleep/sleep-time-pipe.pipe';
 
+import { SleepTimePipePipe } from './sleep/sleep-time-pipe.pipe';
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
 
 @NgModule({
   declarations: [
@@ -22,7 +32,9 @@ import { SleepTimePipePipe } from './sleep/sleep-time-pipe.pipe';
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
