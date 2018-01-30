@@ -1,8 +1,4 @@
-<div>
-  <h4>View Mood</h4>
-</div>
 
-<label>Mood</label><br>
 <!-- <div id="newMood">
 
   <input id="new-mood" value="newMood" ng-model="string" type="radio" name="mood" value="happy"> Happy/Joyful<br>
@@ -17,7 +13,11 @@
 <textarea rows="9" cols="30" value=""></textarea>
 <br>
 <button (click)="submitMood(newMood.value)">Submit!</button> -->
-<div id="newMood">
+<div>
+  <h4>View Mood</h4>
+</div>
+
+<label>Mood</label><br><div id="newMood">
 
   <form id="addMood">
     <select #mood name="mood">
@@ -29,17 +29,17 @@
       <option value="tired">Sick/Tired/Lethargic</option>
       <option value="angry">Angry/Frustrated/Irritable</option>
     </select><br>
-    <!-- <input #mood type="radio" name="moods" value="happy" [ngModel]="user.mood"> Happy/Joyful<br>
-    <input #mood type="radio" name="moods" value="motivated" [ngModel]="user.mood"> Productive/Motivated/Energetic<br>
-    <input #mood type="radio" name="moods" value="content" [ngModel]="user.mood"> Normal/Content<br>
-    <input #mood type="radio" name="moods" value="anxious" [ngModel]="user.mood"> Anxious/Stressed<br>
-    <input #mood type="radio" name="moods" value="depressed" [ngModel]="user.mood"> Depressed/Lonely<br>
-    <input #mood type="radio" name="moods" value="sick" [ngModel]="user.mood"> Sick/Tired/Lethargic<br>
-    <input #mood type="radio" name="moods" value="angry" [ngModel]="user.mood"> Angry/Frustrated/Irritable<br> -->
-    <!-- <input type="text" #moodNotes> -->
     <textarea rows="9" cols="30" value="" #moodNotes></textarea><br>
     <button (click)="submitMood(mood.value, moodNotes.value)">Submit!</button>
 
   </form>
 </div>
 <br>
+<!-- <input #mood type="radio" name="moods" value="happy" [ngModel]="user.mood"> Happy/Joyful<br>
+<input #mood type="radio" name="moods" value="motivated" [ngModel]="user.mood"> Productive/Motivated/Energetic<br>
+<input #mood type="radio" name="moods" value="content" [ngModel]="user.mood"> Normal/Content<br>
+<input #mood type="radio" name="moods" value="anxious" [ngModel]="user.mood"> Anxious/Stressed<br>
+<input #mood type="radio" name="moods" value="depressed" [ngModel]="user.mood"> Depressed/Lonely<br>
+<input #mood type="radio" name="moods" value="sick" [ngModel]="user.mood"> Sick/Tired/Lethargic<br>
+<input #mood type="radio" name="moods" value="angry" [ngModel]="user.mood"> Angry/Frustrated/Irritable<br> -->
+<!-- <input type="text" #moodNotes> -->
