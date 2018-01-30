@@ -8,6 +8,7 @@ import { routing } from './app.routing';
 import { SleepComponent } from './sleep/sleep.component';
 import { MoodComponent } from './mood/mood.component';
 import { AboutComponent } from './about/about.component';
+import { SleepTimePipePipe } from './sleep/sleep-time-pipe.pipe';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AboutComponent } from './about/about.component';
     WelcomeComponent,
     SleepComponent,
     MoodComponent,
-    AboutComponent
+    AboutComponent,
+    SleepTimePipePipe
   ],
   imports: [
     BrowserModule,
