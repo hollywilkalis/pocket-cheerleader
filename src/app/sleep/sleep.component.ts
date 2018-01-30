@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Sleep } from './sleep.model';
 
 @Component({
   selector: 'app-sleep',
@@ -11,10 +12,12 @@ export class SleepComponent implements OnInit {
   months = [];
   days = [];
   hours = [];
+  selectMessage = "Select the time you went to sleep";
   numberForHours = [];
   selectedSleepStart = null;
   selectedDayOne = null;
   selectedDayTwo = null;
+  lastChecked = null;
 
   constructor() { }
 
@@ -35,9 +38,13 @@ export class SleepComponent implements OnInit {
   }
 
   sleepStart(clickedTime) {
+
+
     if (!this.selectedDayOne) {
       this.selectedDayOne = clickedTime;
+      this.selectMessage = "Select the time you woke up";
     } else {
+      this.selectMessage = "Select the time you went to sleep";
       this.selectedDayTwo = clickedTime;
 
       this.selectedDayOne = this.selectedDayOne.replace(/-/g , " ");
@@ -48,17 +55,33 @@ export class SleepComponent implements OnInit {
       let monthTwo = this.selectedDayTwo.split(' ')[0];
       let dayTwo = this.selectedDayTwo.split(' ')[1];
       let dayTwoHours = this.selectedDayTwo.split(' ')[2];
+      let start = this.selectedDayOne.split(" ");
+      let end = this.selectedDayTwo.split(" ");
+      console.log(start, end);
+      //this if statement finds the total hours slept
+      if (start[1] == end[1]){
+        console.log(end[2] - start[2]);
+        let hoursSlept = end[2] - end[1];
+      } else if (start[1] < end[1]){
+        console.log(parseInt(end[2]) + 24 - parseInt(start[2]));
+        let hoursSlept = parseInt(end[2]) + 24 - parseInt(start[2]);
+      }
+      // this.selectedDayTwo.slice(Math.min(start, end), Math.max(start,end)+ 1).checked === true;
 
-      console.log(dayOne, dayOneHours);
-      console.log(this.selectedDayOne);
-      console.log(dayTwo, dayTwoHours);
-      console.log(this.selectedDayTwo);
+
+      let newSleep: Sleep = new Sleep(this.selectedDayOne,   this.selectedDayTwo);
+      console.log(newSleep);
+
+
+      // console.log(this.selectedDayOne);
+      // console.log(this.selectedDayTwo);
       this.selectedDayOne = null;
       this.selectedDayTwo = null;
       dayOne = null;
       dayTwo = null;
       dayOneHours = null;
       dayTwoHours = null;
+
+      }
     }
   }
-}
