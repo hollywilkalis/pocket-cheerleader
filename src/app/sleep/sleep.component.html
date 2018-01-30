@@ -5,5 +5,5 @@
 
 <div class="wrapper" *ngFor="let day of days">
     <div class="box day">{{day}}</div>
-    <div class="box one" *ngFor="let hour of hours"><input type="checkbox" class="chkbx" id="{{day}}-one{{hour}}" value="{{day}}-{{hour}}" (click)="sleepStart($event.target.value)"><label for="{{day}}-one{{hour}}"></label></div>
+    <div class="box one" *ngFor="let hour of hours"><input type="checkbox" class="chkbx" id="{{day}}-one{{hour}}" value="{{day}}-{{hour}}" name="" (click)="sleepStart($event.target.name)"><label for="{{day}}-one{{hour}}"></label></div>
 </div> <!-- wrapper -->
