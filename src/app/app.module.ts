@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, FormControl, FormGroup } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -7,6 +8,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from './app.routing';
 import { SleepComponent } from './sleep/sleep.component';
 import { MoodComponent } from './mood/mood.component';
+import { AddMoodComponent } from './add-mood/add-mood.component';
+import { ViewMoodComponent } from './view-mood/view-mood.component';
 import { AboutComponent } from './about/about.component';
 
 import { SleepTimePipePipe } from './sleep/sleep-time-pipe.pipe';
@@ -28,7 +31,9 @@ export const firebaseConfig = {
     SleepComponent,
     MoodComponent,
     AboutComponent,
-    SleepTimePipePipe
+    SleepTimePipePipe,
+    ViewMoodComponent,
+    AddMoodComponent
   ],
   imports: [
     BrowserModule,

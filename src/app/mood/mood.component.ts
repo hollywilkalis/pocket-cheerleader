@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AddMoodComponent } from '../add-mood/add-mood.component';
 
 @Component({
   selector: 'app-mood',
