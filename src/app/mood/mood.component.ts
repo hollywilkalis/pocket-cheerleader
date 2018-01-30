@@ -8,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class MoodComponent implements OnInit {
   boxes = [];
 
+  editMood(){
+    console.log("edit!");
+  }
+
   constructor() { }
 
   ngOnInit() {
-    for(let i = 0; i < 403; i++){
+    for(let i = 0; i < 372; i++){
       this.boxes.push(i);
     }
   }

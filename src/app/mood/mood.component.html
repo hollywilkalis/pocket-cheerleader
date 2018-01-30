@@ -1,7 +1,6 @@
-Mood Component
+Mood Tracker
 
 <div class="calendar">
-  <div class="chart-label">DAYS</div>
   <div class="chart-label">JAN</div>
   <div class="chart-label">FEB</div>
   <div class="chart-label">MAR</div>
@@ -16,6 +15,6 @@ Mood Component
   <div class="chart-label">DEC</div>
 
   <div class="box-holder" *ngFor="let box of boxes">
-    <div class="day"></div>
+    <button class="day" (click)="editMood()"></button>
   </div>
 </div>
