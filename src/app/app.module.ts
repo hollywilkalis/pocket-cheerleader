@@ -8,6 +8,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from './app.routing';
 import { SleepComponent } from './sleep/sleep.component';
 import { MoodComponent } from './mood/mood.component';
+import { AddMoodComponent } from './add-mood/add-mood.component';
+import { ViewMoodComponent } from './view-mood/view-mood.component';
 import { AboutComponent } from './about/about.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
