@@ -1,16 +1,21 @@
+@import "../../sass/master";
+
 .wrapper {
+  min-width: 1060px;
   display: grid;
   grid-template-columns: repeat(25, 1fr);
-  grid-gap: 1px;
-  background-color: #fff;
+  grid-gap: 2px;
+  margin: 5px;
   color: #444;
+}
+.head-row, .box {
+  border: 2px solid black;
 }
 
 .box {
-  background-color: #2a8fa7;
   color: #fff;
   border-radius: 5px;
-  font-size: 50%;
+  font-size: 70%;
   display: flex;
 }
 .chkbx {
@@ -26,7 +31,7 @@
   width: 100%;
   height: 100%;
   display: inline-block;
-  background-color: red;
+  background-color: $color5;
 }
 
 .day {
@@ -36,4 +41,20 @@
 
 .head-row {
   @extend .day;
+}
+.table-border {
+  display: flex;
+  justify-content: center;
+  background-color: $color4;
+  color: #fff;
+}
+.box-one {
+  visibility: hidden;
+}
+
+.wrapper:nth-child(odd) .color-switch {
+  background-color: $color1;
+}
+.wrapper:nth-child(even) .color-switch {
+  background-color: $color2;
 }
