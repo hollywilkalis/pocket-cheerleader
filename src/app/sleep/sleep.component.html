@@ -1,3 +1,6 @@
+<div class="selectYourTimes">
+  <p>{{selectMessage}}</p>
+</div>
 <div class="" *ngFor="let month of months">
   <h3>{{month}}</h3>
   <div class="wrapper">
@@ -7,5 +10,6 @@
   <div class="wrapper" *ngFor="let day of days">
     <div class="box day table-border">Day {{day}}</div>
     <div class="box color-switch" *ngFor="let hour of hours"><input type="checkbox" class="chkbx" id="{{month}}-{{day}}-{{hour}}" value="{{month}}-{{day}}-{{hour}}" (click)="sleepStart($event.target.id)"><label for="{{month}}-{{day}}-{{hour}}"></label></div>
+
   </div> <!-- wrapper -->
 </div>

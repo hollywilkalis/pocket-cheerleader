@@ -11,6 +11,8 @@ import { MoodComponent } from './mood/mood.component';
 import { AddMoodComponent } from './add-mood/add-mood.component';
 import { ViewMoodComponent } from './view-mood/view-mood.component';
 import { AboutComponent } from './about/about.component';
+
+import { SleepTimePipePipe } from './sleep/sleep-time-pipe.pipe';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -29,6 +31,7 @@ export const firebaseConfig = {
     SleepComponent,
     MoodComponent,
     AboutComponent,
+    SleepTimePipePipe,
     ViewMoodComponent,
     AddMoodComponent
   ],
