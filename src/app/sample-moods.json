@@ -1,0 +1,9 @@
+export class Mood {
+  constructor (
+    public userName: string,
+    public month: string,
+    public day: number,
+    public moodScore: number,
+    public moodNotes: string
+  ) { }
+}
