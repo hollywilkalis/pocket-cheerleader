@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SleepComponent implements OnInit {
 
   number = 0;
+  months = [];
   days = [];
   hours = [];
   numberForHours = [];
@@ -18,8 +19,11 @@ export class SleepComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    for (let i = 0; i < 12; i++) {
+      this.months.push(i + 1);
+    }
     for (let i = 0; i < 31; i++) {
-      this.days.push(`day${i + 1}`);
+      this.days.push(i + 1);
     }
     for (let i = 0; i < 743; i++) {
       this.numberForHours.push(i);
@@ -36,15 +40,25 @@ export class SleepComponent implements OnInit {
     } else {
       this.selectedDayTwo = clickedTime;
 
-      console.log(this.selectedDayOne, this.selectedDayTwo);
+      this.selectedDayOne = this.selectedDayOne.replace(/-/g , " ");
+      this.selectedDayTwo = this.selectedDayTwo.replace(/-/g , " ");
+      let monthOne = this.selectedDayOne.split(' ')[0];
+      let dayOne = this.selectedDayOne.split(' ')[1];
+      let dayOneHours = this.selectedDayOne.split(' ')[2];
+      let monthTwo = this.selectedDayTwo.split(' ')[0];
+      let dayTwo = this.selectedDayTwo.split(' ')[1];
+      let dayTwoHours = this.selectedDayTwo.split(' ')[2];
+
+      console.log(dayOne, dayOneHours);
+      console.log(this.selectedDayOne);
+      console.log(dayTwo, dayTwoHours);
+      console.log(this.selectedDayTwo);
       this.selectedDayOne = null;
       this.selectedDayTwo = null;
+      dayOne = null;
+      dayTwo = null;
+      dayOneHours = null;
+      dayTwoHours = null;
     }
-    // this.x.push(clickedTime);
-    // if (this.x.length === 2){
-    //   console.log(this.x);
-    //   for (let i = 0; i < )
-    // }
   }
-
 }
