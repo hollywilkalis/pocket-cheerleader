@@ -1,7 +1,117 @@
-<div class="selectYourTimes">
-  <p>{{selectMessage}}</p>
-</div>
-<div class="" *ngFor="let month of months">
+  <ul *ngFor="let currentSleep of masterSleepList">
+      <li>Date: {{currentSleep.month}}/{{currentSleep.day}}</li>
+      <li>Time: {{currentSleep.startTime}}:00</li>
+      <li>Woke At: {{currentSleep.wakeTime}}:00</li>
+      <li>Quality: {{currentSleep.quality}}</li>
+      <!-- <button class="edit-btn" (click)="editButtonHasBeenClicked(currentSleep)">Edit!</button> -->
+    </ul>
+<div class="submit-form" id="submit-sleep-event">
+  <h3>Log New Sleep Event</h3>
+  <div class="selectYourTimes">
+  </div>
+    <select class="custom-select" id="get-month" #newMonth>
+      <option>Month</option>
+      <option value="1">Jan</option>
+      <option value="2" selected>Feb</option>
+      <option value="3">Mar</option>
+      <option value="4">Apr</option>
+      <option value="5">May</option>
+      <option value="6">June</option>
+      <option value="7">July</option>
+      <option value="8">Aug</option>
+      <option value="9">Sep</option>
+      <option value="10">Oct</option>
+      <option value="11">Nov</option>
+      <option value="12">Dec</option>
+    </select>
+
+    <select class="custom-select" id="get-day" #newDay>
+      <option selected>Day</option>
+      <option value="1">1</option>
+      <option value="2" selected>2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+
+    <select class="custom-select" id="get-sleep-start" #newStartTime>
+      <option selected>Sleep began at:</option>
+      <option value="0">12am</option>
+      <option value="1">1am</option>
+      <option value="2">2am</option>
+      <option value="3">3am</option>
+      <option value="4">4am</option>
+      <option value="5">5am</option>
+      <option value="6">6am</option>
+      <option value="7">7am</option>
+      <option value="8">8am</option>
+      <option value="9">9am</option>
+      <option value="10">10am</option>
+      <option value="11">11am</option>
+      <option value="12">12pm</option>
+      <option value="13">1pm</option>
+      <option value="14">2pm</option>
+      <option value="15">3pm</option>
+      <option value="16">4pm</option>
+      <option value="17">5pm</option>
+      <option value="18">6pm</option>
+      <option value="19">7pm</option>
+      <option value="20">8pm</option>
+      <option value="21">9pm</option>
+      <option value="22">10pm</option>
+      <option value="23">11pm</option>
+    </select>
+
+    <select class="custom-select" id="get-sleep-end" #newWakeTime>
+      <option selected>Woke up at:</option>
+      <option value="0">12am</option>
+      <option value="1">1am</option>
+      <option value="2">2am</option>
+      <option value="3">3am</option>
+      <option value="4">4am</option>
+      <option value="5">5am</option>
+      <option value="6">6am</option>
+      <option value="7">7am</option>
+      <option value="8">8am</option>
+      <option value="9">9am</option>
+      <option value="10">10am</option>
+      <option value="11">11am</option>
+      <option value="12">12pm</option>
+      <option value="13">1pm</option>
+      <option value="14">2pm</option>
+      <option value="15">3pm</option>
+      <option value="16">4pm</option>
+      <option value="17">5pm</option>
+      <option value="18">6pm</option>
+      <option value="19">7pm</option>
+      <option value="20">8pm</option>
+      <option value="21">9pm</option>
+      <option value="22">10pm</option>
+      <option value="23">11pm</option>
+    </select>
+
+    <div class="quality-time">
+      <select class="custom-select" id="get-quality" #newQuality>
+        <option>Select Sleep Quality</option>
+        <option value="1">Poor</option>
+        <option value="2" selected>Normal</option>
+        <option value="3">Great</option>
+      </select>
+    </div>
+
+    <button type="button" name="button" (click)="submitForm(newMonth.value, newDay.value, newQuality.value, newStartTime.value, newWakeTime.value)">Submit</button>
+  </div>
+
+
+
+<!-- <div class="" *ngFor="let month of months">
   <h3>{{month}}</h3>
   <div class="wrapper">
     <div class="head-row box box-one"></div>
@@ -10,6 +120,4 @@
   <div class="wrapper" *ngFor="let day of days">
     <div class="box day table-border">Day {{day}}</div>
     <div class="box color-switch" *ngFor="let hour of hours"><input type="checkbox" class="chkbx" id="{{month}}-{{day}}-{{hour}}" value="{{month}}-{{day}}-{{hour}}" (click)="sleepStart($event.target.id)"><label for="{{month}}-{{day}}-{{hour}}"></label></div>
-
-  </div> <!-- wrapper -->
-</div>
+  </div> -->
