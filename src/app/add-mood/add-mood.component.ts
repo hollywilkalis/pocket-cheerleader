@@ -13,14 +13,14 @@ export class AddMoodComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  submitMood(month, day, mood, moodNotes){
-    let day = [];
-    event.preventDefault();
-    day.push(month, day, mood, moodNotes);
-
-    console.log(day);
-  }
+  //
+  // submitMood(month, day, mood, moodNotes){
+  //   let day = [];
+  //   event.preventDefault();
+  //   day.push(month, day, mood, moodNotes);
+  //
+  //   console.log(day);
+  // }
 
 
 }
