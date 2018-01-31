@@ -1,10 +1,13 @@
-  <ul *ngFor="let currentSleep of masterSleepList">
+  <ul *ngFor="let currentSleep of sleeps | async" (click)="goToDetailPage(currentSleep)">
       <li>Date: {{currentSleep.month}}/{{currentSleep.day}}</li>
       <li>Time: {{currentSleep.startTime}}:00</li>
       <li>Woke At: {{currentSleep.wakeTime}}:00</li>
       <li>Quality: {{currentSleep.quality}}</li>
       <!-- <button class="edit-btn" (click)="editButtonHasBeenClicked(currentSleep)">Edit!</button> -->
-    </ul>
+  </ul>
+  <!-- <ul *ngFor="let currentSleep of ">
+
+  </ul> -->
 <div class="submit-form" id="submit-sleep-event">
   <h3>Log New Sleep Event</h3>
   <div class="selectYourTimes">
@@ -99,9 +102,9 @@
 
     <div class="quality-time">
       <select class="custom-select" id="get-quality" #newQuality>
-        <option>Select Sleep Quality</option>
+        <option selected>Select Sleep Quality</option>
         <option value="1">Poor</option>
-        <option value="2" selected>Normal</option>
+        <option value="2">Normal</option>
         <option value="3">Great</option>
       </select>
     </div>
