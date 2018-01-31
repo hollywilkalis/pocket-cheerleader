@@ -5,10 +5,12 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 
 @Injectable()
 export class SleepService {
-  sleeps: FirebaseListObservable<any[]>;
-  constructor() { }
+  users: FirebaseListObservable<any[]>;
+  constructor(private database: AngularFireDatabase) {
+    this.users = database.list('users');
+  }
   getSleeps() {
-    return SLEEPS;
+    return this.users;
   }
 
   getSleepById(sleepId: number){

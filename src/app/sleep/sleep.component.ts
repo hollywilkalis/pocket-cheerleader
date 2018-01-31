@@ -19,7 +19,7 @@ export class SleepComponent implements OnInit {
   // ];
   selectedSleep = null;
 
-  submitForm(month: number, day: number, startTime: string, wakeTime: string, quality: number){
+  submitForm(month: number, day: number, startTime: number, wakeTime: number, quality: number){
     var newSleepToAdd: Sleep = new Sleep(month, day, startTime, wakeTime, quality);
     console.log(newSleepToAdd);
   };
@@ -33,7 +33,7 @@ export class SleepComponent implements OnInit {
 
 
   ngOnInit() {
-    this.sleeps = this.sleepService.getSleeps();
+    // this.sleeps = this.sleepService.getSleeps();
 
   }
 }

@@ -16,8 +16,9 @@ export class WelcomeComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.users = this.userService.getUsers();
-    console.log(this.users);
+    this.users = this.userService.getUsers().subscribe(dataLastEmittedFromObserver => {
+     this.users = dataLastEmittedFromObserver;;
+    console.log(this.users[0].sleep[0].day);
   }
 
 }
