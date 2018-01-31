@@ -1,7 +1,13 @@
 <h2>Welcome to the Pocket Cheerleader!</h2>
 
-<div *ngFor="let user of users | async" class="card card-default">
+<div *ngFor="let user of users | async" (click)="goToDetailPage(user)" class="card card-default">
   <div class="card-body">
-    <h3><em>{{user.firstName}}</em></h3>
+  <h3><em>{{user.firstName}}</em></h3>
+    <h3><em>{{user.$key}}</em></h3>
   </div>
 </div>
+
+
+
+
+ <!-- <h3><em>{{user?.sleep[0].day}}</em></h3> -->

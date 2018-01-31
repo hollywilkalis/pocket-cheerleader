@@ -5,6 +5,7 @@ import { MoodComponent } from './mood/mood.component';
 import { SleepComponent } from './sleep/sleep.component';
 import { SleepDetailComponent }   from './sleep/sleep-detail/sleep-detail.component';
 import { AboutComponent } from './about/about.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 const appRoutes: Routes = [
 {
@@ -22,6 +23,10 @@ const appRoutes: Routes = [
 {
   path: 'sleep/:id',
   component: SleepDetailComponent
+},
+{
+  path: 'user/:id',
+  component: UserDetailComponent
 },
 {
   path: 'about',
