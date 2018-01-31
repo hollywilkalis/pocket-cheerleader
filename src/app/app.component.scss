@@ -2,6 +2,12 @@
 .ham-button {
   display: none;
 }
+.nav-float-container {
+  background-image: url("/../../assets/img/texture.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+}
 .nav-sky {
   width: 100%;
   ul {
@@ -20,7 +26,6 @@
 }
 @media only screen and (min-width: 1024px)  {
   .nav-sky {
-    margin-top: 5px;
     height: 65px;
     ul {
       li {
@@ -52,7 +57,6 @@
 }
 @media only screen and (min-width: 810px) and (max-width: 1023px)  {
   .nav-sky {
-    margin-top: 5px;
     height: 65px;
     ul {
       li {
@@ -86,7 +90,6 @@
   .nav-float-container {
     transition: 1s;
     position: relative;
-    background-color: rgb(133, 193, 132);
     .ham-button {
       transition: 1s;
       width: 40px;
@@ -104,10 +107,11 @@
   }
   .nav-sky {
     position: absolute;
-    background-color: rgb(133, 193, 132);
+    background-image: url("/../../assets/img/texture.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
     width: 200px;
-    // height: 100vh;
-    margin-top: 5px;
     transition: 1s;
     overflow: hidden;
     z-index: 1;
