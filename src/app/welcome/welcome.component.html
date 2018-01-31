@@ -1,7 +1,12 @@
-<h2>Welcome to the Pocket Cheerleader!</h2>
-
-<div *ngFor="let user of users | async" class="card card-default">
-  <div class="card-body">
-    <h3><em>{{user.firstName}}</em></h3>
+<div class="wellcome-container">
+  <div class="box-for-users">
+    <h2>Welcome to the Pocket Cheerleader!</h2>
+    <div class="users-box">
+      <div *ngFor="let user of users | async">
+        <div class="users-box-output">
+          <h3><em>{{user.firstName}}</em></h3>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

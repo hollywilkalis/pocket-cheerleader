@@ -1,0 +1,25 @@
+.wellcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/../../assets/img/track.jpeg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  height: 97vh;
+  overflow: hidden;
+  color: #6a0323;
+  .box-for-users {
+    width: 563px;
+    height: 250px;
+    padding: 10px;
+    border: 10px inset #bf2655;
+    background-color: rgba(255, 255, 255, 0.28);
+    .users-box {
+      overflow: scroll;
+      color: #8e8d8a;
+      border: 2px solid white;
+      height: 160px;
+    }
+  }
+}
