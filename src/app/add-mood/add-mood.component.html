@@ -18,7 +18,6 @@
 </div>
 
 <label>Mood</label><br><div id="newMood">
-
   <form id="addMood">
     <select #mood name="mood">
       <option value="happy">Happy/Joyful</option>
@@ -28,8 +27,8 @@
       <option value="depressed">Depressed/Lonely</option>
       <option value="tired">Sick/Tired/Lethargic</option>
       <option value="angry">Angry/Frustrated/Irritable</option>
-    </select><br>
-    <textarea rows="9" cols="30" value="" #moodNotes></textarea><br>
+    </select><br><br>
+    <textarea placeholder="Add notes here - information such as whether you had unexpected visitors, sold your body to science, took medication, etc." rows="9" cols="30" value="" #moodNotes></textarea><br>
     <button (click)="submitMood(mood.value, moodNotes.value)">Submit!</button>
 
   </form>

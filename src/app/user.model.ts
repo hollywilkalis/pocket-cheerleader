@@ -4,6 +4,6 @@ export class User {
       public userName: string,
       public password: string,
       public id: number,
-      public moods
+      public moods: string[]
     ) { }
 }
