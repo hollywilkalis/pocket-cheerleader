@@ -1,0 +1,20 @@
+{ "sleeps": [{
+    "month": "2",
+    "day": "2",
+    "startTime": "22",
+    "wakeTime": "7",
+    "quality": "1"
+    }, {
+    "month": "2",
+    "day": "2",
+    "startTime": "23",
+    "wakeTime": "8",
+    "quality": "3"
+    }, {
+    "month": "1",
+    "day": "31",
+    "startTime": "20",
+    "wakeTime": "6",
+    "quality": "2"
+  }]
+}

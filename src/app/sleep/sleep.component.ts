@@ -1,16 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Sleep } from './sleep.model';
+import { SleepService } from './sleep.service';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-sleep',
   templateUrl: './sleep.component.html',
-  styleUrls: ['./sleep.component.scss']
+  styleUrls: ['./sleep.component.scss'],
+  providers: [SleepService]
 })
 export class SleepComponent implements OnInit {
-  masterSleepList: Sleep[] = [
-    new Sleep(2, 1, "22", "8", 1),
-    new Sleep(2, 2, "23", "7", 3)
-  ];
+  sleeps: Sleep[];
+  // sleeps: FirebaseListObservable<any[]>;
+  // masterSleepList: Sleep[] = [
+  //   new Sleep(2, 1, "22", "8", 1),
+  //   new Sleep(2, 2, "23", "7", 3)
+  // ];
   selectedSleep = null;
 
   submitForm(month: number, day: number, startTime: string, wakeTime: string, quality: number){
@@ -18,10 +24,16 @@ export class SleepComponent implements OnInit {
     console.log(newSleepToAdd);
   };
 
-  constructor() { }
+  constructor(private router: Router, private sleepService: SleepService) { }
+
+  goToDetailPage(clickedSleep: Sleep) {
+    console.log(clickedSleep.quality);
+    this.router.navigate(['sleep', clickedSleep.quality]);
+  };
+
 
   ngOnInit() {
-
+    this.sleeps = this.sleepService.getSleeps();
 
   }
 }
