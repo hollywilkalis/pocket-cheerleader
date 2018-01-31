@@ -1,4 +1,4 @@
-import { Sleep } from '../sleep/sleep-model';
+import { Sleep } from './sleep/sleep.model';
 // import { Mood } from ''
 
 export class User {

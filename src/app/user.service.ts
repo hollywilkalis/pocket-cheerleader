@@ -9,11 +9,12 @@ export class UserService {
 
   constructor(private database: AngularFireDatabase) {
     this.users = database.list('users');
-}
-
-  getUsers() {
-    console.log(this.users);
-    return this.users;
-
   }
+  getUserById(userId: string) {
+    return this.database.object('users/' + userId);
+  }
+    getUsers() {
+      console.log("hello" + this.users);
+      return this.users;
+    }
 }
