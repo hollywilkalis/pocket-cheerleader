@@ -14,26 +14,11 @@ export class AddMoodComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitMood(mood, moodNotes){
+  submitMood(month, day, mood, moodNotes){
     let day = [];
     event.preventDefault();
-    console.log(mood, moodNotes);
-    day.push(mood);
-    if (mood === "happy"){
-      // let color = yellow
-    } if (mood === "energetic"){
-      // let color = green
-    } if (mood === "content"){
-      // let color = pink
-    } if (mood === "stressed"){
-      // let color = orange
-    } if (mood === "depressed"){
-      // let color = blue
-    } if (mood === "tired"){
-      // let color = purple
-    } if (mood === "angry"){
-      // let color = red
-    }
+    day.push(month, day, mood, moodNotes);
+
     console.log(day);
   }
 
