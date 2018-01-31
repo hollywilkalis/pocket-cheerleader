@@ -20,7 +20,7 @@ export class SleepDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
     this.sleepId = parseInt(urlParameters['id']);
   });
-   this.sleepToDisplay = this.sleepService.getSleepById(this.sleepId);
+  //  this.sleepToDisplay = this.sleepService.getSleepById(this.sleepId);
   }
 
 }

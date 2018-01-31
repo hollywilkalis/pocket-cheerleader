@@ -19,21 +19,22 @@ export class SleepComponent implements OnInit {
   // ];
   selectedSleep = null;
 
-  submitForm(month: number, day: number, startTime: string, wakeTime: string, quality: number){
+  submitForm(month: number, day: number, startTime: number, wakeTime: number, quality: number){
     var newSleepToAdd: Sleep = new Sleep(month, day, startTime, wakeTime, quality);
     console.log(newSleepToAdd);
+    this.sleepService.addSleep(newSleepToAdd);
   };
 
   constructor(private router: Router, private sleepService: SleepService) { }
 
   goToDetailPage(clickedSleep: Sleep) {
     console.log(clickedSleep.quality);
-    this.router.navigate(['sleep', clickedSleep.quality]);
+    // this.router.navigate(['sleep', clickedSleep.$key]);
   };
 
 
   ngOnInit() {
-    this.sleeps = this.sleepService.getSleeps();
+    // this.sleeps = this.sleepService.getSleeps();
 
   }
 }

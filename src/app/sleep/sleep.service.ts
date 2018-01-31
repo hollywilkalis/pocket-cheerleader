@@ -5,18 +5,31 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 
 @Injectable()
 export class SleepService {
-  sleeps: FirebaseListObservable<any[]>;
-  constructor() { }
+  users: FirebaseListObservable<any[]>;
+
+  constructor(private database: AngularFireDatabase) {
+    this.users = database.list('users');
+    // this.users.forEach(element => {
+    //         console.log(element[0]);
+    //     });
+  }
   getSleeps() {
-    return SLEEPS;
+    return this.users;
   }
 
+  addSleep(newSleep: Sleep) {
+    console.log(this.users);
+
+    this.users.push(newSleep);
+
+}
+
   getSleepById(sleepId: number){
-    for (var i = 0; i <= SLEEPS.length - 1; i++) {
-      if (SLEEPS[i].quality === sleepId) {
-        return SLEEPS[i];
-      }
-    }
+    // for (var i = 0; i <= SLEEPS.length - 1; i++) {
+    //   if (SLEEPS[i].quality === sleepId) {
+    //     return SLEEPS[i];
+    //   }
+    // }
   }
 
 }
