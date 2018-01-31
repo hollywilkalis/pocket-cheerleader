@@ -6,15 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  navLeft: false;
   pauseAnimation(buttonClick) {
     document.getElementById("pause").removeAttribute("id");
     buttonClick.setAttribute("id", "pause");
   }
 
-  navBartoggler(){
-    let toggle = document.getElementById("nav-sky");
-    if (toggle.value === 1) {
-      alert("cool");
+  toggleLeftNav(){
+    if(this.navLeft) {
+        return "0px";
+      } else {
+        return "-200px";
+      }
     }
   }
 

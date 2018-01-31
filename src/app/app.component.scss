@@ -86,9 +86,11 @@
 }
 @media only screen and (max-width: 809px) {
   .nav-float-container {
+    transition: 1s;
     position: relative;
     background-color: rgb(133, 193, 132);
     .ham-button {
+      transition: 1s;
       width: 40px;
       display: flex;
       flex-direction: row;
@@ -108,10 +110,11 @@
     width: 200px;
     height: 100vh;
     margin-top: 5px;
-    left: -200px;
+    transition: 1s;
     overflow: hidden;
     z-index: 1;
     ul {
+      display: block;
       li {
         width: 200px;
         height: 65px;
