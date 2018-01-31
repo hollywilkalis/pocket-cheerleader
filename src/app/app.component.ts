@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  pauseAnimation(buttonClick) {
+    document.getElementById("pause").removeAttribute("id");
+    buttonClick.setAttribute("id", "pause");
+  }
 }

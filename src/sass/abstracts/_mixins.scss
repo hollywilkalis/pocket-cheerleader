@@ -1,0 +1,10 @@
+@keyframes float-down-up {
+  0%   { top: 0px; }
+  50%   { top: 15px; }
+  100% { top: 0px; }
+}
+@keyframes float-up-down {
+  0%   { top: 15px; }
+  50%   { top: 0px; }
+  100% { top: 15px; }
+}
