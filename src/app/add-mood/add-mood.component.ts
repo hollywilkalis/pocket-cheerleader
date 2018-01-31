@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -8,36 +8,34 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AddMoodComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
   }
 
   submitMood(mood, moodNotes){
+    let day = [];
     event.preventDefault();
     console.log(mood, moodNotes);
+    day.push(mood);
+    if (mood === "happy"){
+      // let color = yellow
+    } if (mood === "energetic"){
+      // let color = green
+    } if (mood === "content"){
+      // let color = pink
+    } if (mood === "stressed"){
+      // let color = orange
+    } if (mood === "depressed"){
+      // let color = blue
+    } if (mood === "tired"){
+      // let color = purple
+    } if (mood === "angry"){
+      // let color = red
+    }
+    console.log(day);
   }
 
-  // if (this.mood === "happy"){
-  //   let color = yellow
-  // }
-  // if (this.mood === "energetic"){
-  //   let color = green
-  // }
-  // if (this.mood === "content"){
-  //   let color = pink
-  // }
-  // if (this.mood === "stressed"){
-  //   let color = orange
-  // }
-  // if (this.mood === "depressed"){
-  //   let color = blue
-  // }
-  // if (this.mood === "tired"){
-  //   let color = purple
-  // }
-  // if (this.mood === "angry"){
-  //   let color = red
-  // }
 
 }
