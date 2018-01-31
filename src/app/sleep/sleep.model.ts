@@ -1,8 +1,11 @@
 
 export class Sleep {
-  constructor ( public startTime: string,
+  constructor ( public month: number,
+                public day: number,
+                public startTime: string,
                 public wakeTime: string,
-                // public quality: string,
+                // public totalHours: number,
+                public quality: number,
               ) { }
 
 
