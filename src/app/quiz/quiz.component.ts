@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Quiz } from './quiz.model';
+import { QuizAnswerComponent } from '../quiz-answer/quiz-answer.component';
 
 @Component({
   selector: 'app-quiz',
@@ -7,12 +8,15 @@ import { Quiz } from './quiz.model';
   styleUrls: ['./quiz.component.scss']
 })
 export class QuizComponent implements OnInit {
+  selectedQuestion = null;
+  answerYes = false;
+
   questions = [
       {name:'I do not keep a regular sleep schedule.', value:'1', checked:false, suggestion: "Going to sleep and getting up around the same time every day will help set your body's internal clock, leading to a better sleep."},
-      {name:'I often keep the light on.', value:'2', checked:false, suggestion: "STOP KEEPING THE LIGHT ON"},
-      {name:'I ingest a lot of sugar and refined carbohydrates.', value:'3', checked:false, suggestion: "TOP EATING SO MUCH SUGAR/REFINED CARBS"},
+      {name:'I often keep the light on.', value:'2', checked:false, suggestion: "Oh I'm sorry I didn't know we were millionaires who can afford to keep electricity running nonstop--SHUT IT DOWN"},
+      {name:'I ingest a lot of sugar and refined carbohydrates.', value:'3', checked:false, suggestion: "STOP EATING SO MUCH OF THAT STUFF"},
       {name:'I live a rather sedentary lifestyle, void of regular exercise regardless of how minimal.', value:'3', checked:false, suggestion: "Some physical activity in the day to get the blood pumping will help you wind down later."},
-      {name:'I do not venture to The Outside (hsssss)', value:'3', checked:false, suggestion: "GO OUTSIDE FOR ONCE IN YOUR LIFE"},
+      {name:'I dare not venture to The Outside realm (hsssss)', value:'3', checked:false, suggestion: "GO OUTSIDE FOR ONCE IN YOUR LIFE"},
       {name:'The sun is hideous - I avoid its glare during the daylight hours.', value:'3', checked:false, suggestion: "GET SOME SUNGLASSES BOZO"},
       {name:'My workspace is not well-lit.', value:'3', checked:false, suggestion: "Not only will maintaining a well-lit workspace help keep your body alert, you can actually see what color clothes everyone is wearing, if any."},
       {name:'I commonly ingest caffeinated goods within 6 hours of bedtime.', value:'3', checked:false, suggestion: "Caffeine takes roughly 6 hours to flush through the system entirely, so it might be nice to regulate intake to earlier in the day."},
@@ -26,9 +30,20 @@ export class QuizComponent implements OnInit {
     //             .filter(opt => opt.checked)
     //             .map(opt => opt.value)
     // }
-  constructor() { }
+
+  constructor() {}
+
+  checkedYes(question){
+    console.log(question.suggestion);
+  }
+
+  // checkedYes(clickedQuestion){
+  //   this.selectedQuestion = clickedQuestion;
+  //   console.log(this.questions);
+  // }
 
   ngOnInit() {
+    // if checked or checked===true, show question.suggestion
   }
 
 
