@@ -9,10 +9,10 @@
 
   </ul> -->
   <!-- <img src="/../assets/sheep/conductor-sheep.png"> -->
-<div class="submit-form" id="submit-sleep-event">
-  <h3>Log New Sleep Event</h3>
-  <div class="selectYourTimes">
-  </div>
+  <div class="submit-form" id="submit-sleep-event">
+    <h3>Log New Sleep Event</h3><br>
+    <div class="selectYourTimes">
+    </div>
     <select class="custom-select" id="get-month" #newMonth>
       <option>Month</option>
       <option value="1" selected>Jan</option>
@@ -123,64 +123,67 @@
 
     <button type="button" name="button" (click)="submitForm(newMonth.value, newDay.value, newStartTime.value, newWakeTime.value, newQuality.value)">Submit</button>
   </div>
+  <div class="custom-container">
 
-  <div class="charts"  id="doughnut">
-    <h3>Day View</h3>
-    <canvas baseChart width="200" height="100" [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-  </div>
+    <div class="charts"  id="doughnut">
+      <h3>Day View</h3>
+      <canvas baseChart width="200" height="100" [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
 
-  <div class="charts" id="barDecember">
-    <h3>December</h3>
-    <canvas baseChart [datasets]="DecemberBarChartData" [labels]="DecemberBarChartLabels" [options]="DecemberBarChartOptions" [legend]="DecemberBarChartLegend" [chartType]="DecemberBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-  </div>
-  <div class="charts" id="barNovember">
-    <h3>November</h3>
-    <canvas baseChart [datasets]="NovemberBarChartData" [labels]="NovemberBarChartLabels" [options]="NovemberBarChartOptions" [legend]="NovemberBarChartLegend" [chartType]="NovemberBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-  </div>
-  <div class="charts" id="barOctober">
-    <h3>October</h3>
-    <canvas baseChart [datasets]="OctoberBarChartData" [labels]="OctoberBarChartLabels" [options]="OctoberBarChartOptions" [legend]="OctoberBarChartLegend" [chartType]="OctoberBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-  </div>
-  <div class="charts" id="barSeptember">
-    <h3>September</h3>
-    <canvas baseChart [datasets]="SeptemberBarChartData" [labels]="SeptemberBarChartLabels" [options]="SeptemberBarChartOptions" [legend]="SeptemberBarChartLegend" [chartType]="SeptemberBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-  </div>
-  <div class="charts" id="barJuly">
-    <h3>July</h3>
-    <canvas baseChart [datasets]="JulyBarChartData" [labels]="JulyBarChartLabels" [options]="JulyBarChartOptions" [legend]="JulyBarChartLegend" [chartType]="JulyBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-  </div>
-  <div class="charts" id="barAugust">
-    <h3>August</h3>
-    <canvas baseChart [datasets]="AugustBarChartData" [labels]="AugustBarChartLabels" [options]="AugustBarChartOptions" [legend]="AugustBarChartLegend" [chartType]="AugustBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-  </div>
-  <div class="charts" id="barJune">
-    <h3>June</h3>
-    <canvas baseChart [datasets]="JuneBarChartData" [labels]="JuneBarChartLabels" [options]="JuneBarChartOptions" [legend]="JuneBarChartLegend" [chartType]="JuneBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-  </div>
-  <div class="charts" id="barMay">
-    <h3>May</h3>
-    <canvas baseChart [datasets]="MayBarChartData" [labels]="MayBarChartLabels" [options]="MayBarChartOptions" [legend]="MayBarChartLegend" [chartType]="MayBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-  </div>
-  <div class="charts" id="barApril">
-    <h3>April</h3>
-    <canvas baseChart [datasets]="AprilBarChartData" [labels]="AprilBarChartLabels" [options]="AprilBarChartOptions" [legend]="AprilBarChartLegend" [chartType]="AprilBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-  </div>
-  <div class="charts" id="barMarch">
-    <h3>March</h3>
-    <canvas baseChart [datasets]="MarchBarChartData" [labels]="MarchBarChartLabels" [options]="MarchBarChartOptions" [legend]="MarchBarChartLegend" [chartType]="MarchBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-  </div>
-  <div class="charts" id="barFebruary">
-    <h3>February</h3>
-    <canvas baseChart [datasets]="FebruaryBarChartData" [labels]="FebruaryBarChartLabels" [options]="FebruaryBarChartOptions" [legend]="FebruaryBarChartLegend" [chartType]="FebruaryBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-  </div>
-  <div class="charts" id="barJanuary">
-    <h3>January</h3>
-    <canvas baseChart [datasets]="JanuaryBarChartData" [labels]="JanuaryBarChartLabels" [options]="JanuaryBarChartOptions" [legend]="JanuaryBarChartLegend" [chartType]="JanuaryBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-  </div>
+    <div class="charts" id="barDecember">
+      <h3>December</h3>
+      <canvas baseChart [datasets]="DecemberBarChartData" [labels]="DecemberBarChartLabels" [options]="DecemberBarChartOptions" [legend]="DecemberBarChartLegend" [chartType]="DecemberBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div class="charts" id="barNovember">
+      <h3>November</h3>
+      <canvas baseChart [datasets]="NovemberBarChartData" [labels]="NovemberBarChartLabels" [options]="NovemberBarChartOptions" [legend]="NovemberBarChartLegend" [chartType]="NovemberBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div class="charts" id="barOctober">
+      <h3>October</h3>
+      <canvas baseChart [datasets]="OctoberBarChartData" [labels]="OctoberBarChartLabels" [options]="OctoberBarChartOptions" [legend]="OctoberBarChartLegend" [chartType]="OctoberBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div class="charts" id="barSeptember">
+      <h3>September</h3>
+      <canvas baseChart [datasets]="SeptemberBarChartData" [labels]="SeptemberBarChartLabels" [options]="SeptemberBarChartOptions" [legend]="SeptemberBarChartLegend" [chartType]="SeptemberBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div class="charts" id="barJuly">
+      <h3>July</h3>
+      <canvas baseChart [datasets]="JulyBarChartData" [labels]="JulyBarChartLabels" [options]="JulyBarChartOptions" [legend]="JulyBarChartLegend" [chartType]="JulyBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div class="charts" id="barAugust">
+      <h3>August</h3>
+      <canvas baseChart [datasets]="AugustBarChartData" [labels]="AugustBarChartLabels" [options]="AugustBarChartOptions" [legend]="AugustBarChartLegend" [chartType]="AugustBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div class="charts" id="barJune">
+      <h3>June</h3>
+      <canvas baseChart [datasets]="JuneBarChartData" [labels]="JuneBarChartLabels" [options]="JuneBarChartOptions" [legend]="JuneBarChartLegend" [chartType]="JuneBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div class="charts" id="barMay">
+      <h3>May</h3>
+      <canvas baseChart [datasets]="MayBarChartData" [labels]="MayBarChartLabels" [options]="MayBarChartOptions" [legend]="MayBarChartLegend" [chartType]="MayBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div class="charts" id="barApril">
+      <h3>April</h3>
+      <canvas baseChart [datasets]="AprilBarChartData" [labels]="AprilBarChartLabels" [options]="AprilBarChartOptions" [legend]="AprilBarChartLegend" [chartType]="AprilBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div class="charts" id="barMarch">
+      <h3>March</h3>
+      <canvas baseChart [datasets]="MarchBarChartData" [labels]="MarchBarChartLabels" [options]="MarchBarChartOptions" [legend]="MarchBarChartLegend" [chartType]="MarchBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div class="charts" id="barFebruary">
+      <h3>February</h3>
+      <canvas baseChart [datasets]="FebruaryBarChartData" [labels]="FebruaryBarChartLabels" [options]="FebruaryBarChartOptions" [legend]="FebruaryBarChartLegend" [chartType]="FebruaryBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div class="charts" id="barJanuary">
+      <h3>January</h3>
+      <canvas baseChart [datasets]="JanuaryBarChartData" [labels]="JanuaryBarChartLabels" [options]="JanuaryBarChartOptions" [legend]="JanuaryBarChartLegend" [chartType]="JanuaryBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
 
-  <div class="charts" id="line">
-    <h3>Monthly Average</h3>
-    <canvas baseChart [data]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    <div class="charts" id="line">
+      <h3>Monthly Average</h3>
+      <canvas baseChart [data]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+
   </div>
 
 
