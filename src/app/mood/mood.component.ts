@@ -36,6 +36,7 @@ export class MoodComponent implements OnInit {
     //   this.days.push(i);
     // }
   }
+
   moodColor(currentMood){
     if (currentMood.mood === "happy"){
       return "happy-color";
@@ -53,4 +54,3 @@ export class MoodComponent implements OnInit {
       return "angry-color";
     }
   }
-}

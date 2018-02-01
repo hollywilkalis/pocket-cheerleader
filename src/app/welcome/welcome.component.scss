@@ -1,0 +1,62 @@
+.wellcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/../../assets/img/track.jpeg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  height: 97vh;
+  overflow: hidden;
+  color: #6a0323;
+  .box-for-users {
+    border: 10px inset #bf2655;
+    background-color: rgba(255, 255, 255, 0.28);
+    .users-box {
+      overflow:  auto;
+      color: #8e8d8a;
+      border: 2px solid white;
+      height: 160px;
+    }
+  }
+}
+@media only screen and (min-width: 591px)  {
+  .box-for-users {
+    margin-left: -40px;
+    width: 563px;
+    height: 250px;
+    padding: 10px;
+    .users-box {
+      border: 2px solid white;
+      height: 160px;
+    }
+  }
+}
+@media only screen and (max-width: 590px)  {
+  .box-for-users {
+    margin-left: -15px;
+    width: 75%;
+    min-width: 230px;
+    height: 313px;
+    padding: 10px;
+    .users-box {
+      border: 2px solid white;
+      height: 160px;
+    }
+  }
+}
+@media only screen and (min-width: 1024px)  {
+  .wellcome-container {
+    height: calc(100vh - 65px);
+  }
+}
+@media only screen and (min-width: 810px) and (max-width: 1023px)  {
+  .wellcome-container {
+    height: calc(100vh - 65px);
+  }
+}
+@media only screen and (max-width: 809px) {
+  .wellcome-container {
+    height: calc(100vh - 28px);
+  }
+}

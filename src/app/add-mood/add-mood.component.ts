@@ -13,6 +13,7 @@ export class AddMoodComponent implements OnInit {
   ngOnInit() {
   }
 
+
   submitMood(month, day, mood, moodNotes){
     
     // let moodDay = [];
@@ -21,6 +22,7 @@ export class AddMoodComponent implements OnInit {
     //
     // console.log(moodDay);
   }
+
 
 
 }

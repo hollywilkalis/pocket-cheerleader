@@ -2,8 +2,8 @@
 export class Sleep {
   constructor ( public month: number,
                 public day: number,
-                public startTime: string,
-                public wakeTime: string,
+                public startTime: number,
+                public wakeTime: number,
                 // public totalHours: number,
                 public quality: number,
               ) { }

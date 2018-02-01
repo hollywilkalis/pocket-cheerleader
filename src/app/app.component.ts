@@ -6,9 +6,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  navLeft: boolean =  false;
   pauseAnimation(buttonClick) {
     document.getElementById("pause").removeAttribute("id");
     buttonClick.setAttribute("id", "pause");
   }
+  toggleNavLeft(){
+    if(this.navLeft) {
+      this.navLeft = false;
+    }else{
+      this.navLeft = true;
+    }
+  }
+
+  toggleLeftNav(){
+    if(this.navLeft) {
+      return "0px";
+    } else {
+      return "-200px";
+    }
+  }
+
+
+
+  // masterMoodsList: Day[] = [
+  //   new Day(1, 2, "depressed", "I spilled milk."),
+  //   new Day(1, 2, "happy", "I passed my code review."),
+  //   new Day(1, 2, "stressed", "Turns out I didn't pass my code review.")
+  // ];
 
 }
