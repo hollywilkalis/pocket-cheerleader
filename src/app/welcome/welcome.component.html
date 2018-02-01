@@ -1,19 +1,33 @@
 
-<div class="wellcome-container">
+<div class="welcome-container">
+  <!-- <img src="/../assets/sheep/conductor-sheep.png"> -->
   <div class="box-for-users">
-    <h2>Welcome to the Pocket Cheerleader!</h2>
+
+    <h2>Welcome to the Sleep Train</h2>
+
     <div class="users-box">
-      <div *ngFor="let user of users | async" (click)="goToDetailPage(user)">
+      <!-- <div *ngFor="let user of users | async" (click)="goToDetailPage(user)"> -->
         <div class="users-box-output">
-          <h3><em>{{user.firstName}}</em></h3>
+
+          <a class="link" routerLink="sleep">Griffin</a>
+          <!-- <h3><em>{{user.firstName}}</em></h3> -->
+
         </div>
-      </div>
+        <div class="users-box-output">
+          <a class="link" routerLink="sleep">Holly</a>
+          <!-- <h3><em>{{user.firstName}}</em></h3> -->
+        </div>
+        <div class="users-box-output">
+          <a class="link"routerLink="sleep">Kevin</a>
+          <!-- <h3><em>{{user.firstName}}</em></h3> -->
+        </div>
+        <div class="users-box-output">
+          <a class="link"routerLink="sleep">Lena</a>
+          <!-- <h3><em>{{user.firstName}}</em></h3> -->
+        </div>
+
+      <!-- </div> -->
     </div>
 
   </div>
 </div>
-
-
-
-
- <!-- <h3><em>{{user?.sleep[0].day}}</em></h3> -->

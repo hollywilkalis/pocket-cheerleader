@@ -1,22 +1,32 @@
-.about-container {
-  background-image: url("/../../assets/img/about.jpeg");
+.card {
+  height: 250px;
+  max-width: 400px;
+  margin: 10px;
+  font-family: cute;
+  padding: 5px;
+
+  .card-footer {
+    font-size: 30px;
+    color: black;
+    text-align: center;
+  }
+}
+.card-body {
   background-repeat: no-repeat;
-  background-position:  top;
-  background-size: cover;
-  width: 100%;
+  background-size: contain;
+  background-position: center;
 }
-@media only screen and (min-width: 1024px)  {
-  .about-container {
-    height: calc(100vh - 65px);
-  }
+.holly {
+  background-image: url("/../assets/sheep/holly-sheep.png");
 }
-@media only screen and (min-width: 810px) and (max-width: 1023px)  {
-  .about-container {
-    height: calc(100vh - 65px);
-  }
+.griffin {
+  background-image: url("/../assets/sheep/griffin-sheep.png");
+
 }
-@media only screen and (max-width: 809px) {
-  .about-container {
-    height: calc(100vh - 28px);
-  }
+.kevin {
+  background-image: url("/../assets/sheep/kevin-sheep.png");
+}
+.lena {
+  background-image: url("/../assets/sheep/lena-sheep.png");
+
 }
