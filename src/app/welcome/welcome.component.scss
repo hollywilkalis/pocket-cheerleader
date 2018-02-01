@@ -1,4 +1,4 @@
-.wellcome-container {
+.welcome-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,14 +9,27 @@
   height: 97vh;
   overflow: hidden;
   color: #6a0323;
+  img {
+    height: 100px;
+  }
   .box-for-users {
     border: 10px inset #bf2655;
     background-color: rgba(255, 255, 255, 0.28);
+
     .users-box {
       overflow:  auto;
       color: #8e8d8a;
       border: 2px solid white;
       height: 160px;
+    }
+    .users-box-output {
+      border: 1px solid gray;
+      text-align: center;
+      padding: 2px;
+    }
+    .link {
+      text-decoration: none;
+      color: black;
     }
   }
 }
@@ -46,17 +59,17 @@
   }
 }
 @media only screen and (min-width: 1024px)  {
-  .wellcome-container {
+  .welcome-container {
     height: calc(100vh - 65px);
   }
 }
 @media only screen and (min-width: 810px) and (max-width: 1023px)  {
-  .wellcome-container {
+  .welcome-container {
     height: calc(100vh - 65px);
   }
 }
 @media only screen and (max-width: 809px) {
-  .wellcome-container {
+  .welcome-container {
     height: calc(100vh - 28px);
   }
 }
