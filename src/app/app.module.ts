@@ -17,6 +17,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { SleepDetailComponent } from './sleep/sleep-detail/sleep-detail.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { ChartsModule } from 'ng2-charts';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -40,6 +41,7 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     FormsModule,
+    ChartsModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule

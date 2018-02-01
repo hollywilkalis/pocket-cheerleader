@@ -11,8 +11,15 @@ export class UserService {
     this.users = database.list('users');
   }
   getUserById(userId: string) {
-    return this.database.object('users/' + userId);
+    return this.database.object('users/' + userId)
   }
+
+  updateUser(localUpdatedUser){
+  var userEntryInFirebase = this.getUserById(localUpdatedUser.$key);
+  userEntryInFirebase.update({username: localUpdatedUser.userName,
+                              password: localUpdatedUser.password,
+                              firstname: localUpdatedUser.firstName});
+}
     getUsers() {
       console.log("hello" + this.users);
       return this.users;

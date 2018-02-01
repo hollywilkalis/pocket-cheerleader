@@ -20,3 +20,17 @@ export class Sleep {
 //   let end = this.selectedDayOne.index(this.lastChecked);
 //   this.selectedDayOne.slice(Math.min(start, end), Math.max(start,end)+ 1).prop('checked', this.lastChecked.checked);
 // }
+// let myChart = document.getElementById('myChart').getContext('2d');
+//
+// let sleepChart = new Chart(myChart, {
+//   type:'bar', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
+//   data:{
+//     labels:['1','2','3','4','5'],
+//     datasets:[{
+//       label:'Hours',
+//       data:[ 8, 4, 6, 8, 9]
+//       ]
+//     }]
+//   },
+//   options:{}
+// });
