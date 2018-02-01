@@ -20,7 +20,7 @@ export class SleepComponent implements OnInit {
   public x: number;
   public y: number;
   submitForm(month: number, day: number, startTime: number, wakeTime: number, quality: number) {
-    var newSleepToAdd: Sleep = new Sleep(month, day, startTime, wakeTime, quality);
+    var newSleepToAdd: Sleep = new Sleep(parseInt(month), parseInt(day), parseInt(startTime), parseInt(wakeTime), parseInt(quality));
     console.log(newSleepToAdd);
     this.sleepService.addSleep(newSleepToAdd);
     console.log(this.barChartData[0].data[30]);
