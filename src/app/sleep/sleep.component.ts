@@ -48,8 +48,8 @@ export class SleepComponent implements OnInit {
   FebruaryBarChartData:any[] = [
     {data: [], label: 'Hours Slept'}
   ];
-  lineChartData:Array<any> = [this.January, this.February, this.March, this.April, this.May, this.June, this.July, this.August, this.September, this.October, this.November, this.December];
-  lineChartLabels:Array<any> = ['January', 'February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  lineChartData:Array<any> = [[0, this.January, this.February, this.March, this.April, this.May, this.June, this.July, this.August, this.September, this.October, this.November, this.December]];
+  lineChartLabels:Array<any> = ['Monthy Avg','January', 'February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   lineChartType:string = 'line';
 
   constructor(private router: Router, private sleepService: SleepService) { }
@@ -124,7 +124,10 @@ export class SleepComponent implements OnInit {
     var avg = total / AwakeTime.length;
     if(month === 'January'){this.January = avg}
     if(month === 'February'){this.February = avg}
-    this.lineChartData = [this.January, this.February, this.March, this.April, this.May, this.June, this.July, this.August, this.September, this.October, this.November, this.December];
+    this.lineChartData = [0, this.January, this.February, this.March, this.April, this.May, this.June, this.July, this.August, this.September, this.October, this.November, this.December];
+  }
+  chartClicked(event){
+    console.log(event);
   }
 
 

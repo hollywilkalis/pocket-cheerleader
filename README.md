@@ -1,7 +1,10 @@
+# PocketCheerleader
 # Sleep Train
 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 #### Sleep tracker and sleep habits quiz
 
+## Development server
 #### By Lena Ha, Griffin Longtin, Kevin Boyle, and Holly Wilkalis
 
 ## Description
@@ -20,27 +23,35 @@ The project repository can be found at https://github.com/hollywilkalis/pocket-c
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Code scaffolding
 ### Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Build
 ### Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
+## Running unit tests
 ### Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## Running end-to-end tests
 ## Known Bugs
 
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 * Currently the Firebase data server only stores one user record at a time.
 * On the sleep quiz, checking a checkbox input twice (to uncheck) will treat it as two positives.
 * Currently the charts are only coded to respond to data for January and February.
 
+## Further help
 ## Support and contact details
 
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 If you have any questions, contact a member of the project team via Github:
 * Lena: https://github.com/lenjha
 * Holly: https://github.com/hollywilkalis
