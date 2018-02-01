@@ -19,8 +19,13 @@ export class SleepComponent implements OnInit {
   doughnutChartLabels:string[] = ['Asleep', 'Awake'];
   doughnutChartType:string = 'doughnut';
   doughnutChartData:number[] = [];
+  barChartOptions:any = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
   barChartLabels:string[] = [];
   barChartType:string = 'bar';
+  barChartLegend:boolean = true;
   barChartData:any[] = [
     {data: [], label: 'Hours Slept'}
   ];
@@ -37,30 +42,27 @@ export class SleepComponent implements OnInit {
   }
 
   submitForm(month: number, day: number, startTime: number, wakeTime: number, quality: number) {
-
+    var newSleepToAdd: Sleep = new Sleep(parseInt(month), parseInt(day), parseInt(startTime), parseInt(wakeTime), parseInt(quality));
+    this.sleepService.addSleep(newSleepToAdd);
   }
 
   inputFormData() {
+    let FBDDays = [];
+    let FBDwakeTime = [];
     this.usersOBJ.forEach(function(userData){
       console.log(userData);
+      if (userData.month === 1){
+        console.log('runUserDataIf');
+        FBDDays.push(userData.day);
+        FBDwakeTime.push(userData.wakeTime);
+      }
     });
+    console.log(FBDwakeTime)
+    this.barChartLabels = FBDDays;
+    this.barChartData[0].data = FBDwakeTime;
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
