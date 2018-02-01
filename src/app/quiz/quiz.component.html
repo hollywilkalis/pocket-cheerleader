@@ -8,7 +8,21 @@
   <div class="form-group">
     <label for="checklist">Checklist:</label>
     <div *ngFor="let question of questions">
+      <!-- <question-answer-tile [childQuestionList]="masterQuestionList" (clickSender)="sendQuestion($event)"></question-answer-tile> -->
       <label>
+        <input type="checkbox" (click)="checkedYes(question)" [checked]="answerYes" />
+
+        {{question.name}}<br>
+
+        <div #suggestor>
+
+        </div>
+
+      <!-- <div class="suggestion">
+        {{question.suggestion}}
+      </div> -->
+      </label>
+      <!-- <label>
         <input type="checkbox" (click)="checkedYes(question)" (change)="answerYes = !answerYes" [checked]="answerYes" />
 
         {{question.name}}<br>
@@ -16,7 +30,7 @@
       <div class="suggestion" *ngIf="answerYes">
         {{question.suggestion}}
       </div>
-    </label>
+    </label> -->
     </div>
   </div>
 </div>
