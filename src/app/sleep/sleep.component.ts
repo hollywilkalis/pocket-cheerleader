@@ -41,7 +41,7 @@ export class SleepComponent implements OnInit {
     });
   }
 
-  submitForm(month: number, day: number, startTime: number, wakeTime: number, quality: number) {
+  submitForm(month: any, day: any, startTime: any, wakeTime: any, quality: any) {
     var newSleepToAdd: Sleep = new Sleep(parseInt(month), parseInt(day), parseInt(startTime), parseInt(wakeTime), parseInt(quality));
     this.sleepService.addSleep(newSleepToAdd);
   }
