@@ -1,7 +1,7 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { MoodComponent } from './mood/mood.component';
+import { QuizComponent } from './quiz/quiz.component';
 import { SleepComponent } from './sleep/sleep.component';
 import { SleepDetailComponent }   from './sleep/sleep-detail/sleep-detail.component';
 import { AboutComponent } from './about/about.component';
@@ -13,8 +13,8 @@ const appRoutes: Routes = [
   component: WelcomeComponent
 },
 {
-  path: 'mood',
-  component: MoodComponent
+  path: 'quiz',
+  component: QuizComponent
 },
 {
   path: 'sleep',

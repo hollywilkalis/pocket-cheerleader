@@ -1,15 +1,32 @@
-.day
-  (click)=editForm
+            Caffeine - it takes 6 hrs to flush out of system
 
-edit form
-date?
-moods:
-  happy/joyful [YELLOW]
-  productive/motivated/energetic [GREEN]
-  normal/content [PINK]
-  depressed/lonely/empty [BLUE]
-  anxious/stressed [PURPLE]
-  sick/tired/lethargic [ORANGE]
-  angry/frustrated/irritable [RED]
-notes: textarea (500px-by-800px?)
-  placeholder="notes - did you take medication? sleep a lot?  the in-laws visited?  etc."
+            Cut down on alcohol
+            Scheduled bedtime/waking-time
+            Limit naps to early afternoon (15-20 min)
+Electronics vs. analog
+Sleeping positions
+
+            Avoid bright screens within 1-2 hrs of bedtime
+Dark room
+
+Avoid big meals at night
+Cut down on sugars and refined carbohydrates
+Eat turkey sandwich or whole-grain cereal, banana, or yogurt/milk as a nighttime snack
+
+DURING THE DAY
+            Light in the workspace
+            SAD light
+            Go outside
+            Sunlight exposure in the morning
+            Exercise
+
+Deep breathing
+Reading book/magazine
+Warm bath
+Soft music
+Small stretches
+Make preparations/to-do list for the next day
+Dim the lights
+
+Make your goal relaxation, not sleep
+If you wake feeling anxious, make a note on it

@@ -1,12 +1,4 @@
-
-Mood Tracker
-
-<!-- <button name="button" (click)="addMood()">Add a mood!</button>
-<app-add-mood></app-add-mood> -->
-
-<app-edit-mood></app-edit-mood>
-
-<!-- <div *ngIf="selectedMood">
+<div *ngIf="selectedMood">
   <h3>Editing for {{selectedMood.month}}/{{selectedMood.day}}</h3>
   <select [(ngModel)]="selectedMood.mood">
     <option disabled selected value>Today I was mostly...</option>
@@ -20,16 +12,13 @@ Mood Tracker
   </select><br>
   <textarea [(ngModel)]="selectedMood.moodNotes" rows="9" cols="30"></textarea>
   <button (click)="finishedEditing()">Submit</button>
-</div> -->
+</div>
 
-<!-- <hr>
+<hr>
 
 <h1><em>{{test}}</em></h1>
 <ul>
   <li [class]="moodColor(currentMood)" *ngFor="let currentMood of moods">{{currentMood.month}}/{{currentMood.day}}: {{currentMood.mood}} - {{currentMood.moodNotes}}
   <button (click)="editMood(currentMood)">Edit!</button></li>
 </ul>
-<hr> -->
-
-<!-- <textarea [(ngModel)]="selectedMood.moodNotes" rows="9" cols="30"></textarea> -->
-
+<hr>
