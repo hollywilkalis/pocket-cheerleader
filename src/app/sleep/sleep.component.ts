@@ -14,16 +14,134 @@ import { ChartsModule } from 'ng2-charts';
   providers: [SleepService, UserService]
 })
 export class SleepComponent implements OnInit {
+  users;
+  usersOBJ;
+  January = 0;
+  February = 0;
+  March = 6.3;
+  April = 8;
+  May = 5;
+  June = 6;
+  July = 6.6;
+  August = 3.6;
+  September = 8;
+  October = 5.7;
+  November = 8.3;
+  December = 10;
 
-  submitForm(month: number, day: number, startTime: number, wakeTime: number, quality: number) {
-    var newSleepToAdd: Sleep = new Sleep(month, day, startTime, wakeTime, quality);
-    const doughnutChartLabels:string[] = ['Asleep', 'Awake'];
-    const doughnutChartType:string = 'doughnut';
-    let doughnutChartData:number[] = [];
-    console.log(newSleepToAdd);
+  doughnutChartLabels:string[] = ['Awake', 'Asleep'];
+  doughnutChartType:string = 'doughnut';
+  doughnutChartData:number[] = [0, 0];
+  barChartOptions:any = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+  JanuaryBarChartLabels:string[] = [];
+  JanuaryBarChartType:string = 'bar';
+  JanuaryBarChartLegend:boolean = true;
+  JanuaryBarChartData:any[] = [
+    {data: [], label: 'Hours Slept'}
+  ];
+  FebruaryBarChartLabels:string[] = [];
+  FebruaryBarChartType:string = 'bar';
+  FebruaryBarChartLegend:boolean = true;
+  FebruaryBarChartData:any[] = [
+    {data: [], label: 'Hours Slept'}
+  ];
+  lineChartData:Array<any> = [this.January, this.February, this.March, this.April, this.May, this.June, this.July, this.August, this.September, this.October, this.November, this.December];
+  lineChartLabels:Array<any> = ['January', 'February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  lineChartType:string = 'line';
+
+  constructor(private router: Router, private sleepService: SleepService) { }
+
+  ngOnInit() {
+    this.users = this.sleepService.getUsers();
+    this.users.subscribe(dataLastEmittedFromObserver => {
+      this.usersOBJ = dataLastEmittedFromObserver;
+      console.log(this.usersOBJ);
+      this.inputFormData();
+    });
+  }
+
+  submitForm(month: any, day: any, startTime: any, wakeTime: any, quality: any) {
+    var newSleepToAdd: Sleep = new Sleep(parseInt(month), parseInt(day), parseInt(startTime), parseInt(wakeTime), parseInt(quality));
+    this.sleepService.addSleep(newSleepToAdd);
+    this.dayViewDayChart(wakeTime);
+  }
+
+  inputFormData() {
+    // Start January
+    let JanuaryDays = [];
+    let JanuarywakeTime = [];
+    let January = false;
+    this.usersOBJ.forEach(function(userData){
+      if (userData.month === 1){
+        JanuaryDays.push(userData.day);
+        JanuarywakeTime.push(userData.wakeTime);
+        January = true;
+      }
+    });
+    this.JanuaryBarChartLabels = JanuaryDays;
+    this.JanuaryBarChartData[0].data = JanuarywakeTime;
+    if(January){
+      let element = document.getElementById('barJanuary');
+      element.style.display = 'block';
+      this.getAverage(JanuarywakeTime, 'January');
+    }
+    // End Of January
+    // Start January
+    let FebruaryDays = [];
+    let FebruarywakeTime = [];
+    let February = false;
+    this.usersOBJ.forEach(function(userData){
+      if (userData.month === 2){
+        FebruaryDays.push(userData.day);
+        FebruarywakeTime.push(userData.wakeTime);
+        February = true;
+      }
+    });
+    this.FebruaryBarChartLabels = FebruaryDays;
+    this.FebruaryBarChartData[0].data = FebruarywakeTime;
+    if(February){
+      let element = document.getElementById('barFebruary');
+      element.style.display = 'block';
+      this.getAverage(JanuarywakeTime, 'February');
+    }
+    // End Of January
+  }
+
+  dayViewDayChart(wakeTimeInput) {
+    let element = document.getElementById('doughnut');
+    element.style.display = 'block';
+    this.doughnutChartData = [(24 - wakeTimeInput), wakeTimeInput];
+  }
+
+  getAverage(AwakeTime, month){
+    var total = 0;
+    for(var i = 0; i < AwakeTime.length; i++) {
+        total += AwakeTime[i];
+    }
+    var avg = total / AwakeTime.length;
+    if(month === 'January'){this.January = avg}
+    if(month === 'February'){this.February = avg}
+    this.lineChartData = [this.January, this.February, this.March, this.April, this.May, this.June, this.July, this.August, this.September, this.October, this.November, this.December];
+  }
+
+
+}
+
+
+
+
+  // submitForm(month: number, day: number, startTime: number, wakeTime: number, quality: number) {
+  //   var newSleepToAdd: Sleep = new Sleep(month, day, startTime, wakeTime, quality);
+  //   const doughnutChartLabels:string[] = ['Asleep', 'Awake'];
+  //   const doughnutChartType:string = 'doughnut';
+  //   let doughnutChartData:number[] = [];
+  //   console.log(newSleepToAdd);
     // this.sleepService.addSleep(newSleepToAdd);
     // console.log(this.barChartData[0].data[30]);
-    this.barChartData[0].data.splice(30, 1, wakeTime);
+    // this.barChartData[0].data.splice(30, 1, wakeTime);
     // console.log(this.barChartData[0].data[30]);
     // let xIndex = parseInt(wakeTime);
     // let yIndex = 24 - xIndex;
@@ -31,7 +149,7 @@ export class SleepComponent implements OnInit {
     // console.log(yIndex);
     // doughnutChartData.push(xIndex, yIndex);
     // console.log(doughnutChartData);
-  };
+  // };
   // Doughnut
 
 // events
@@ -43,18 +161,18 @@ export class SleepComponent implements OnInit {
 //   console.log(e);
 // }
 //end doughnut, start bar
-public barChartOptions:any = {
-  scaleShowVerticalLines: false,
-  responsive: true
-};
-public barChartLabels:string[] = ['1', '2', '3', '4', '5', '6', '7', '8','9','10','11', '12', '13', '14', '15', '16', '17', '18','19','20','21', '22', '23', '24', '25', '26', '27', '28','29','30','31'];
+// public barChartOptions:any = {
+//   scaleShowVerticalLines: false,
+//   responsive: true
+// };
+// public barChartLabels:string[] = ['1', '2', '3', '4', '5', '6', '7', '8','9','10','11', '12', '13', '14', '15', '16', '17', '18','19','20','21', '22', '23', '24', '25', '26', '27', '28','29','30','31'];
 
-public barChartType:string = 'bar';
-public barChartLegend:boolean = true;
+// public barChartType:string = 'bar';
+// public barChartLegend:boolean = true;
 
-public barChartData:any[] = [
-  {data: [8, 10, 6, 5, 8, 12, 4.5, 8, 8, 10, 9, 8.5, 5, 8, 12, 5.5, 6, 8, 8, 9, 8.5, 10, 4, 8, 12, 10, 8, 8, 6, 7, 0, 0, 23], label: 'Hours Slept'}
-];
+// public barChartData:any[] = [
+  // {data: [8, 10, 6, 5, 8, 12, 4.5, 8, 8, 10, 9, 8.5, 5, 8, 12, 5.5, 6, 8, 8, 9, 8.5, 10, 4, 8, 12, 10, 8, 8, 6, 7, 0, 0, 23], label: 'Hours Slept'}
+// ];
 
 // events
 // public chartClicked(e:any):void {
@@ -80,45 +198,17 @@ public barChartData:any[] = [
 //   this.barChartData = clone;
 // }
 // lineChart
-public lineChartData:Array<any> = [
-  [8.1, 7.2, 6.5, 6.7, 7.9, 7.2, 8.1, 7.8, 7.7, 7.8, 7.1, 7.4, 7.6]
-];
-public lineChartLabels:Array<any> = ['Hours Slept', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January'];
-public lineChartType:string = 'line';
+// public lineChartData:Array<any> = [
+//   [8.1, 7.2, 6.5, 6.7, 7.9, 7.2, 8.1, 7.8, 7.7, 7.8, 7.1, 7.4, 7.6]
+// ];
+// public lineChartLabels:Array<any> = ['Hours Slept', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January'];
+// public lineChartType:string = 'line';
 
-
-
-
-  sleeps: Sleep[];
-  selectedSleep = null;
-
-
-
-  constructor(private router: Router, private sleepService: SleepService) { }
-
-
-  // goToDetailPage(clickedSleep: Sleep) {
-  //   console.log(clickedSleep);
-  //   // this.router.navigate(['sleep', clickedSleep.$key]);
-  // };
-
-
-  ngOnInit() {
-    // this.sleeps = this.sleepService.getSleeps();
-
-  }
-
-
-}
-
-
-
-
-
-
-
-
-
+  //
+  // sleeps: Sleep[];
+  // selectedSleep = null;
+  //
+  //
 
 //old version
 // export class SleepComponent implements OnInit {
