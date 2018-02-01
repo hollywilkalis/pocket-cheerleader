@@ -2,135 +2,16 @@
 
 <p>Answer the following questions~</p>
 
-<!-- <div class="quiz-container">
-
-  <label for="schedule">I do not keep a regular sleep schedule - the spontaneity is thrilling.</label>
-    <select class="" name="schedule">
-      <option value=""></option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select><br>
-
-  <label for="lightOn">I often keep the light on.</label>
-    <select class="" name="lightOn">
-      <option value=""></option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select><br>
-
-  <label for="sugars">I ingest a lot of sugar and refined carbohydrates.</label>
-    <select class="" name="sugars">
-      <option value=""></option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select><br>
-
-  <label for="sedentary">I live a rather sedentary lifestyle, void of regular exercise regardless of how minimal.</label>
-    <select class="" name="sedentary">
-      <option value=""></option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select><br>
-
-  <label for="outside">I do not venture to The Outside (hsssss)</label>
-    <select class="" name="sugars">
-      <option value=""></option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select><br>
-
-
-
-
-
-    <input type="checkbox" [checked]="sun" (change)="sun = !sun"> <label for="sun">The sun is hideous - I avoid its glare during the daylight hours.</label><br>
-
-    <input type="checkbox" [checked]="workspace" (change)="workspace = !workspace"> <label for="workspace">My workspace is not well-lit.</label><br>
-
-    <input type="checkbox" [checked]="caffeine" (change)="caffeine = !caffeine"> <label for="caffeine">I commonly ingest caffeinated goods within 6 hours of bedtime.</label><br>
-
-    <input type="checkbox" [checked]="naptime" (change)="naptime = !naptime"> <label for="naptime">I often take naps exceeding 30 minutes past the late afternoon.</label><br>
-
-    <input type="checkbox" [checked]="alcohol" (change)="alcohol = !alcohol"> <label for="alcohol">I often partake in alcoholic libations to the point of inebriation.</label><br>
-
-    <input type="checkbox" [checked]="bluelight" (change)="bluelight = !bluelight"> <label for="bluelight">I am exposed to a backlit screen within a couple hours of sleeptime.</label><br>
-
-  <button (click)="submitQuiz()">Analyze!</button>
-
-</div> -->
-
-<!-- CHECKLIST -->
-<!-- <div class="quiz-container"> -->
-
-  <!-- plunker example http://plnkr.co/edit/tA8ySd9EuyH5LoVdP6vS?p=preview -->
-  <!-- <input type="checkbox" [(ngModel)]="theCheckbox" (change)="toggleVisibility($event)"/> <label for="schedule">I do not keep a regular sleep schedule - the spontaneity is thrilling.</label><br>
-
-  Checkbox is <span *ngIf="marked">checked</span><span *ngIf="!marked">unchecked</span>
-
-  <div>And <b>ngModel</b> also works, it's value is <b>{{theCheckbox}}</b></div> -->
-
-  <!-- <input type="checkbox" [checked]="schedule" (change)="schedule = !schedule"> <label for="schedule">I do not keep a regular sleep schedule - the spontaneity is thrilling.</label><br> -->
-
-  <!-- <input type="checkbox" [checked]="schedule" (change)="schedule = !schedule" [ngModel]="quiz.schedule" name="schedule"> <label for="schedule">I do not keep a regular sleep schedule - the spontaneity is thrilling.</label><br>
-
-  <input type="checkbox" [checked]="lightOn" (change)="lightOn = !lightOn"> <label for="lightOn">I often keep the light on.</label><br>
-
-  <input type="checkbox" [checked]="sugars" (change)="sugars = !sugars"><label for="sugars">I ingest a lot of sugar and refined carbohydrates.</label><br>
-
-  <input type="checkbox" [checked]="sedentary" (change)="sedentary = !sedentary"> <label for="sedentary">I live a rather sedentary lifestyle, void of regular exercise regardless of how minimal.</label><br>
-
-  <input type="checkbox" [checked]="outside" (change)="outside = !outside"> <label for="outside">I do not venture to The Outside (hsssss)</label><br>
-
-  <input type="checkbox" [checked]="sun" (change)="sun = !sun"> <label for="sun">The sun is hideous - I avoid its glare during the daylight hours.</label><br>
-
-  <input type="checkbox" [checked]="workspace" (change)="workspace = !workspace"> <label for="workspace">My workspace is not well-lit.</label><br>
-
-  <input type="checkbox" [checked]="caffeine" (change)="caffeine = !caffeine"> <label for="caffeine">I commonly ingest caffeinated goods within 6 hours of bedtime.</label><br>
-
-  <input type="checkbox" [checked]="naptime" (change)="naptime = !naptime"> <label for="naptime">I often take naps exceeding 30 minutes past the late afternoon.</label><br>
-
-  <input type="checkbox" [checked]="alcohol" (change)="alcohol = !alcohol"> <label for="alcohol">I often partake in alcoholic libations to the point of inebriation.</label><br>
-
-  <input type="checkbox" [checked]="bluelight" (change)="bluelight = !bluelight"> <label for="bluelight">I am exposed to a backlit screen within a couple hours of sleeptime.</label><br>
-
-<button (click)="submitQuiz()">Analyze!</button>
-
-</div> -->
-
-<!-- <div *ngFor="#quizAnswer of quizAnswers" (click)="onselect(quizAnswer)">
-  I do not keep a regular sleep schedule - the spontaneity is thrilling.
-</div> -->
-
-<!-- <input type="checkbox" [checked]="schedule" (change)="schedule = !schedule" [ngModel]="quiz.schedule" name="schedule"> <label for="schedule">I do not keep a regular sleep schedule - the spontaneity is thrilling.</label><br>
-
-<input type="checkbox" [checked]="lightOn" (change)="lightOn = !lightOn"> <label for="lightOn">I often keep the light on.</label><br>
-
-<input type="checkbox" [checked]="sugars" (change)="sugars = !sugars"><label for="sugars">I ingest a lot of sugar and refined carbohydrates.</label><br>
-
-<input type="checkbox" [checked]="sedentary" (change)="sedentary = !sedentary"> <label for="sedentary">I live a rather sedentary lifestyle, void of regular exercise regardless of how minimal.</label><br>
-
-<input type="checkbox" [checked]="outside" (change)="outside = !outside"> <label for="outside">I do not venture to The Outside (hsssss)</label><br>
-
-<input type="checkbox" [checked]="sun" (change)="sun = !sun"> <label for="sun">The sun is hideous - I avoid its glare during the daylight hours.</label><br>
-
-<input type="checkbox" [checked]="workspace" (change)="workspace = !workspace"> <label for="workspace">My workspace is not well-lit.</label><br>
-
-<input type="checkbox" [checked]="caffeine" (change)="caffeine = !caffeine"> <label for="caffeine">I commonly ingest caffeinated goods within 6 hours of bedtime.</label><br>
-
-<input type="checkbox" [checked]="naptime" (change)="naptime = !naptime"> <label for="naptime">I often take naps exceeding 30 minutes past the late afternoon.</label><br>
-
-<input type="checkbox" [checked]="alcohol" (change)="alcohol = !alcohol"> <label for="alcohol">I often partake in alcoholic libations to the point of inebriation.</label><br>
-
-<input type="checkbox" [checked]="bluelight" (change)="bluelight = !bluelight"> <label for="bluelight">I am exposed to a backlit screen within a couple hours of sleeptime.</label><br> -->
-
 <div class="form-group">
     <label for="checklist">Checklist:</label>
     <div *ngFor="let question of questions">
         <label>
-            <input type="checkbox"
+          <input type="checkbox"
+              [checked]="answerYes" (change)="answerYes = !answerYes" />
+            <!-- <input type="checkbox"
                    name="question"
                    value="{{question.value}}"
-                   [(ngModel)]="question.checked"/>
+                   [(ngModel)]="question.checked"/> -->
             {{question.name}}<br>
             {{question.suggestion}}
         </label>
