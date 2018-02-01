@@ -63,8 +63,12 @@
   margin-top: 5vh;
   border: 1px solid lightgrey;
   padding: 5%;
+  display: block;
 }
 .charts h3 {
   text-align: center;
   font-weight: bold;
+}
+#doughnut {
+  display: none;
 }

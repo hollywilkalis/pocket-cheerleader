@@ -124,20 +124,17 @@
 
     <button type="button" name="button" (click)="submitForm(newMonth.value, newDay.value, newStartTime.value, newWakeTime.value, newQuality.value)">Submit</button>
   </div>
-  <div class="output" *ngFor="let user of users | async">
-    <h1>{{user.day}}</h1>
-  </div>
 
-  <div class="charts"  id="doughnut" style="display: block">
+  <div class="charts"  id="doughnut">
     <h3>Day View</h3>
     <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
   </div>
 
-  <div class="charts" id="bar" style="display: block">
+  <div class="charts" id="bar">
     <h3>January</h3>
     <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
   </div>
-  
+
   <div class="charts" id="line">
     <h3>Monthly Average</h3>
     <canvas baseChart [data]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>

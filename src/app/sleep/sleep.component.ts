@@ -18,7 +18,7 @@ export class SleepComponent implements OnInit {
   usersOBJ;
   doughnutChartLabels:string[] = ['Asleep', 'Awake'];
   doughnutChartType:string = 'doughnut';
-  doughnutChartData:number[] = [];
+  doughnutChartData:number[] = [0, 0];
   barChartOptions:any = {
     scaleShowVerticalLines: false,
     responsive: true
@@ -44,6 +44,7 @@ export class SleepComponent implements OnInit {
   submitForm(month: any, day: any, startTime: any, wakeTime: any, quality: any) {
     var newSleepToAdd: Sleep = new Sleep(parseInt(month), parseInt(day), parseInt(startTime), parseInt(wakeTime), parseInt(quality));
     this.sleepService.addSleep(newSleepToAdd);
+    this.dayViewDayChart(wakeTime);
   }
 
   inputFormData() {
@@ -60,6 +61,12 @@ export class SleepComponent implements OnInit {
     console.log(FBDwakeTime)
     this.barChartLabels = FBDDays;
     this.barChartData[0].data = FBDwakeTime;
+  }
+
+  dayViewDayChart(wakeTimeInput) {
+    let element = document.getElementById('doughnut');
+    element.style.display = 'block';
+    this.doughnutChartData = [wakeTimeInput, (24 - wakeTimeInput)];
   }
 
 }
