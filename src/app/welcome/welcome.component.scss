@@ -9,8 +9,15 @@
   height: 97vh;
   overflow: hidden;
   color: #6a0323;
+
   img {
     height: 100px;
+  }
+
+  h2 {
+    font-family: cute;
+    text-align: center;
+    margin-top: 10px;
   }
   .box-for-users {
     border: 10px inset #bf2655;
@@ -26,10 +33,16 @@
       border: 1px solid gray;
       text-align: center;
       padding: 2px;
+      margin: 5px 0px;
     }
+
     .link {
       text-decoration: none;
       color: black;
+    }
+    .users-box-output:hover {
+      background-color: #bf2655;
+      color: white;
     }
   }
 }
