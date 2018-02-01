@@ -58,3 +58,13 @@
 .wrapper:nth-child(even) .color-switch {
   background-color: $color2;
 }
+
+.charts {
+  margin-top: 5vh;
+  border: 1px solid lightgrey;
+  padding: 5%;
+}
+.charts h3 {
+  text-align: center;
+  font-weight: bold;
+}

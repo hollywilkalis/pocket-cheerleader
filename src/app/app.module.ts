@@ -22,6 +22,7 @@ import { MoodListComponent } from './mood-list/mood-list.component';
 import { QuizComponent } from './quiz/quiz.component';
 
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 export const firebaseConfig = {
@@ -52,6 +53,7 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     FormsModule,
+    ChartsModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule

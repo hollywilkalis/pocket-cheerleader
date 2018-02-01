@@ -17,19 +17,17 @@ export class SleepService {
     return this.users;
   }
 
+  getUserById(userId: string) {
+    return this.database.object('users/' + userId);
+  }
+//   updateSleep(localUpdatedSleep){
+//
+// }
+
   addSleep(newSleep: Sleep) {
-    console.log(this.users);
+    // var userEntryInFireBase = this.getUserById(newSleep.$key);
+    // this.users.push(newSleep);
 
-    this.users.push(newSleep);
-
-}
-
-  getSleepById(sleepId: number){
-    // for (var i = 0; i <= SLEEPS.length - 1; i++) {
-    //   if (SLEEPS[i].quality === sleepId) {
-    //     return SLEEPS[i];
-    //   }
-    // }
   }
 
 }

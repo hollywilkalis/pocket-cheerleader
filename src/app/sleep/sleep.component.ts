@@ -2,42 +2,116 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Sleep } from './sleep.model';
 import { SleepService } from './sleep.service';
+import { User } from '../user.model';
+import { UserService } from '../user.service';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { ChartsModule } from 'ng2-charts';
 
 @Component({
   selector: 'app-sleep',
   templateUrl: './sleep.component.html',
   styleUrls: ['./sleep.component.scss'],
-  providers: [SleepService]
+  providers: [SleepService, UserService]
 })
 export class SleepComponent implements OnInit {
+
+  submitForm(month: number, day: number, startTime: number, wakeTime: number, quality: number) {
+    var newSleepToAdd: Sleep = new Sleep(month, day, startTime, wakeTime, quality);
+    const doughnutChartLabels:string[] = ['Asleep', 'Awake'];
+    const doughnutChartType:string = 'doughnut';
+    let doughnutChartData:number[] = [];
+    console.log(newSleepToAdd);
+    // this.sleepService.addSleep(newSleepToAdd);
+    // console.log(this.barChartData[0].data[30]);
+    this.barChartData[0].data.splice(30, 1, wakeTime);
+    // console.log(this.barChartData[0].data[30]);
+    // let xIndex = parseInt(wakeTime);
+    // let yIndex = 24 - xIndex;
+    // console.log(xIndex);
+    // console.log(yIndex);
+    // doughnutChartData.push(xIndex, yIndex);
+    // console.log(doughnutChartData);
+  };
+  // Doughnut
+
+// events
+// public chartClicked(e:any):void {
+//   console.log(e);
+// }
+//
+// public chartHovered(e:any):void {
+//   console.log(e);
+// }
+//end doughnut, start bar
+public barChartOptions:any = {
+  scaleShowVerticalLines: false,
+  responsive: true
+};
+public barChartLabels:string[] = ['1', '2', '3', '4', '5', '6', '7', '8','9','10','11', '12', '13', '14', '15', '16', '17', '18','19','20','21', '22', '23', '24', '25', '26', '27', '28','29','30','31'];
+
+public barChartType:string = 'bar';
+public barChartLegend:boolean = true;
+
+public barChartData:any[] = [
+  {data: [8, 10, 6, 5, 8, 12, 4.5, 8, 8, 10, 9, 8.5, 5, 8, 12, 5.5, 6, 8, 8, 9, 8.5, 10, 4, 8, 12, 10, 8, 8, 6, 7, 0, 0, 23], label: 'Hours Slept'}
+];
+
+// events
+// public chartClicked(e:any):void {
+//   console.log(e);
+// }
+//
+// public chartHovered(e:any):void {
+//   console.log(e);
+// }
+
+// public randomize():void {
+//   // Only Change 3 values
+//   let data = [
+//     Math.round(Math.random() * 100),
+//     59,
+//     80,
+//     (Math.random() * 100),
+//     56,
+//     (Math.random() * 100),
+//     40];
+//   let clone = JSON.parse(JSON.stringify(this.barChartData));
+//   clone[0].data = data;
+//   this.barChartData = clone;
+// }
+// lineChart
+public lineChartData:Array<any> = [
+  [8.1, 7.2, 6.5, 6.7, 7.9, 7.2, 8.1, 7.8, 7.7, 7.8, 7.1, 7.4, 7.6]
+];
+public lineChartLabels:Array<any> = ['Hours Slept', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January'];
+public lineChartType:string = 'line';
+
+
+
+
   sleeps: Sleep[];
-  // sleeps: FirebaseListObservable<any[]>;
-  // masterSleepList: Sleep[] = [
-  //   new Sleep(2, 1, "22", "8", 1),
-  //   new Sleep(2, 2, "23", "7", 3)
-  // ];
   selectedSleep = null;
 
-  submitForm(month: number, day: number, startTime: number, wakeTime: number, quality: number){
-    var newSleepToAdd: Sleep = new Sleep(month, day, startTime, wakeTime, quality);
-    console.log(newSleepToAdd);
-    this.sleepService.addSleep(newSleepToAdd);
-  };
+
 
   constructor(private router: Router, private sleepService: SleepService) { }
 
-  goToDetailPage(clickedSleep: Sleep) {
-    console.log(clickedSleep.quality);
-    // this.router.navigate(['sleep', clickedSleep.$key]);
-  };
+
+  // goToDetailPage(clickedSleep: Sleep) {
+  //   console.log(clickedSleep);
+  //   // this.router.navigate(['sleep', clickedSleep.$key]);
+  // };
 
 
   ngOnInit() {
     // this.sleeps = this.sleepService.getSleeps();
 
   }
+
+
 }
+
+
 
 
 
