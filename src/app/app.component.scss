@@ -1,16 +1,23 @@
 @import "../sass/master";
 .ham-button {
   display: none;
+  transition: 1s;
+
 }
 .nav-float-container {
   background-image: url("/../../assets/img/texture.jpg");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
+  transition: 1s;
 }
 .nav-sky {
   width: 100%;
+  transition: 1s;
   ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,10 +95,9 @@
 }
 @media only screen and (max-width: 809px) {
   .nav-float-container {
-    transition: 1s;
     position: relative;
     .ham-button {
-      transition: 1s;
+      background-color: white;
       width: 40px;
       display: flex;
       flex-direction: row;
@@ -112,7 +118,6 @@
     background-position: bottom;
     background-size: cover;
     width: 200px;
-    transition: 1s;
     overflow: hidden;
     z-index: 1;
     ul {
