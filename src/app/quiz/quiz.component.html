@@ -1,20 +1,22 @@
-<h3>Checklist</h3>
+<div class="container">
+  <div class="top">
+    <h3>Sleep Habits Checklist</h3>
 
-<p>Answer the following questions~</p>
+    <p>Check all lifestyle statements that apply to you!</p>
+  </div>
 
-<div class="form-group">
+  <div class="form-group">
     <label for="checklist">Checklist:</label>
     <div *ngFor="let question of questions">
-        <label>
-          <input type="checkbox"
-              (click)="checkedYes(question)"
-              [checked]="answerYes" />
-            <!-- <input type="checkbox"
-                   name="question"
-                   value="{{question.value}}"
-                   [(ngModel)]="question.checked"/> -->
-            {{question.name}}<br>
-            <!-- {{question.suggestion}} -->
-        </label>
+      <label>
+        <input type="checkbox" (click)="checkedYes(question)" (change)="answerYes = !answerYes" [checked]="answerYes" />
+
+        {{question.name}}<br>
+
+      <div class="suggestion" *ngIf="answerYes">
+        {{question.suggestion}}
+      </div>
+    </label>
     </div>
+  </div>
 </div>
