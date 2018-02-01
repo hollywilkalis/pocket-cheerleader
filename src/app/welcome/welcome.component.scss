@@ -1,3 +1,5 @@
+
+
 .welcome-container {
   display: flex;
   justify-content: center;
@@ -10,24 +12,27 @@
   overflow: hidden;
   color: #6a0323;
 
-  img {
-    height: 100px;
-  }
 
-  h2 {
-    font-family: cute;
-    text-align: center;
-    margin-top: 10px;
-  }
   .box-for-users {
     border: 10px inset #bf2655;
     background-color: rgba(255, 255, 255, 0.28);
+
+    h2 {
+      text-align: center;
+      font-family: cute;
+      margin-top: 5px;
+    }
+
+    h5 {
+      text-align: center;
+      font-size: 14px;
+    }
 
     .users-box {
       overflow:  auto;
       color: #8e8d8a;
       border: 2px solid white;
-      height: 160px;
+      height: 140px;
     }
     .users-box-output {
       border: 1px solid gray;
