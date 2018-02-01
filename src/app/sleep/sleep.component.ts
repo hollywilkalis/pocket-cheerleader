@@ -16,6 +16,19 @@ import { ChartsModule } from 'ng2-charts';
 export class SleepComponent implements OnInit {
   users;
   usersOBJ;
+  January = 0;
+  February = 0;
+  March = 6.3;
+  April = 8;
+  May = 5;
+  June = 6;
+  July = 6.6;
+  August = 3.6;
+  September = 8;
+  October = 5.7;
+  November = 8.3;
+  December = 10;
+
   doughnutChartLabels:string[] = ['Awake', 'Asleep'];
   doughnutChartType:string = 'doughnut';
   doughnutChartData:number[] = [0, 0];
@@ -35,6 +48,9 @@ export class SleepComponent implements OnInit {
   FebruaryBarChartData:any[] = [
     {data: [], label: 'Hours Slept'}
   ];
+  lineChartData:Array<any> = [this.January, this.February, this.March, this.April, this.May, this.June, this.July, this.August, this.September, this.October, this.November, this.December];
+  lineChartLabels:Array<any> = ['January', 'February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  lineChartType:string = 'line';
 
   constructor(private router: Router, private sleepService: SleepService) { }
 
@@ -70,6 +86,7 @@ export class SleepComponent implements OnInit {
     if(January){
       let element = document.getElementById('barJanuary');
       element.style.display = 'block';
+      this.getAverage(JanuarywakeTime, 'January');
     }
     // End Of January
     // Start January
@@ -88,6 +105,7 @@ export class SleepComponent implements OnInit {
     if(February){
       let element = document.getElementById('barFebruary');
       element.style.display = 'block';
+      this.getAverage(JanuarywakeTime, 'February');
     }
     // End Of January
   }
@@ -97,6 +115,18 @@ export class SleepComponent implements OnInit {
     element.style.display = 'block';
     this.doughnutChartData = [(24 - wakeTimeInput), wakeTimeInput];
   }
+
+  getAverage(AwakeTime, month){
+    var total = 0;
+    for(var i = 0; i < AwakeTime.length; i++) {
+        total += AwakeTime[i];
+    }
+    var avg = total / AwakeTime.length;
+    if(month === 'January'){this.January = avg}
+    if(month === 'February'){this.February = avg}
+    this.lineChartData = [this.January, this.February, this.March, this.April, this.May, this.June, this.July, this.August, this.September, this.October, this.November, this.December];
+  }
+
 
 }
 
