@@ -11,9 +11,4 @@ export class AppComponent {
     buttonClick.setAttribute("id", "pause");
   }
 
-  masterMoodsList: Day[] = [
-    new Day(1, 2, "depressed", "I spilled milk."),
-    new Day(1, 2, "happy", "I passed my code review."),
-    new Day(1, 2, "stressed", "Turns out I didn't pass my code review.")
-  ];
 }

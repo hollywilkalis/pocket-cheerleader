@@ -16,6 +16,9 @@ import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { SleepDetailComponent } from './sleep/sleep-detail/sleep-detail.component';
+import { EditMoodComponent } from './edit-mood/edit-mood.component';
+import { MoodListComponent } from './mood-list/mood-list.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -33,7 +36,10 @@ export const firebaseConfig = {
     AboutComponent,
     ViewMoodComponent,
     AddMoodComponent,
-    SleepDetailComponent
+    SleepDetailComponent,
+    EditMoodComponent,
+    MoodListComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,

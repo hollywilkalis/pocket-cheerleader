@@ -8,18 +8,18 @@ import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 })
 export class AddMoodComponent implements OnInit {
 
-
   constructor() { }
 
   ngOnInit() {
   }
 
   submitMood(month, day, mood, moodNotes){
-    let day = [];
-    event.preventDefault();
-    day.push(month, day, mood, moodNotes);
-
-    console.log(day);
+    
+    // let moodDay = [];
+    // event.preventDefault();
+    // moodDay.push(month, day, mood, moodNotes);
+    //
+    // console.log(moodDay);
   }
 
 

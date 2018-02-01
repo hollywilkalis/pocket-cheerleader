@@ -1,25 +1,47 @@
-.calendar {
-  display: grid;
-  grid-template-columns:repeat(12, 1fr);
-  // grid-gap: 1px;
-  grid-template-rows:repeat(32, 1fr);
+.happy-color {
+  background: #ede86d;
+}
+.energetic-color {
+  background: #8bd68d;
+}
+.content-color {
+  background: #efc6ee;
+}
+.stressed-color{
+  background: #ef8d47;
+}
+.depressed-color {
+  background: #7d97c1;
+}
+.tired-color {
+  background: #a58db7;
+}
+.angry-color {
+  background: #a84649;
 }
 
-.calendar > div {
-  // background-color: aliceblue;
-  border: 1px solid black;
-}
-
-.calendar > div:nth-child(odd) {
-  // background-color: lavender;
-}
-
-.chart-label {
-  text-align: center;
-  padding: 5px;
-}
-
-.box-holder > button {
-  width: 100%;
-  height: 100%;
-}
+// .calendar {
+//   display: grid;
+//   grid-template-columns:repeat(12, 1fr);
+//   // grid-gap: 1px;
+//   grid-template-rows:repeat(32, 1fr);
+// }
+//
+// .calendar > div {
+//   // background-color: aliceblue;
+//   border: 1px solid black;
+// }
+//
+// .calendar > div:nth-child(odd) {
+//   // background-color: lavender;
+// }
+//
+// .chart-label {
+//   text-align: center;
+//   padding: 5px;
+// }
+//
+// .box-holder > button {
+//   width: 100%;
+//   height: 100%;
+// }
