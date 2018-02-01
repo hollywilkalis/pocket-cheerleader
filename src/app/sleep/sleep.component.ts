@@ -16,17 +16,23 @@ import { ChartsModule } from 'ng2-charts';
 export class SleepComponent implements OnInit {
   users;
   usersOBJ;
-  doughnutChartLabels:string[] = ['Asleep', 'Awake'];
+  doughnutChartLabels:string[] = ['Awake', 'Asleep'];
   doughnutChartType:string = 'doughnut';
   doughnutChartData:number[] = [0, 0];
   barChartOptions:any = {
     scaleShowVerticalLines: false,
     responsive: true
   };
-  barChartLabels:string[] = [];
-  barChartType:string = 'bar';
-  barChartLegend:boolean = true;
-  barChartData:any[] = [
+  JanuaryBarChartLabels:string[] = [];
+  JanuaryBarChartType:string = 'bar';
+  JanuaryBarChartLegend:boolean = true;
+  JanuaryBarChartData:any[] = [
+    {data: [], label: 'Hours Slept'}
+  ];
+  FebruaryBarChartLabels:string[] = [];
+  FebruaryBarChartType:string = 'bar';
+  FebruaryBarChartLegend:boolean = true;
+  FebruaryBarChartData:any[] = [
     {data: [], label: 'Hours Slept'}
   ];
 
@@ -48,25 +54,48 @@ export class SleepComponent implements OnInit {
   }
 
   inputFormData() {
-    let FBDDays = [];
-    let FBDwakeTime = [];
+    // Start January
+    let JanuaryDays = [];
+    let JanuarywakeTime = [];
+    let January = false;
     this.usersOBJ.forEach(function(userData){
-      console.log(userData);
       if (userData.month === 1){
-        console.log('runUserDataIf');
-        FBDDays.push(userData.day);
-        FBDwakeTime.push(userData.wakeTime);
+        JanuaryDays.push(userData.day);
+        JanuarywakeTime.push(userData.wakeTime);
+        January = true;
       }
     });
-    console.log(FBDwakeTime)
-    this.barChartLabels = FBDDays;
-    this.barChartData[0].data = FBDwakeTime;
+    this.JanuaryBarChartLabels = JanuaryDays;
+    this.JanuaryBarChartData[0].data = JanuarywakeTime;
+    if(January){
+      let element = document.getElementById('barJanuary');
+      element.style.display = 'block';
+    }
+    // End Of January
+    // Start January
+    let FebruaryDays = [];
+    let FebruarywakeTime = [];
+    let February = false;
+    this.usersOBJ.forEach(function(userData){
+      if (userData.month === 2){
+        FebruaryDays.push(userData.day);
+        FebruarywakeTime.push(userData.wakeTime);
+        February = true;
+      }
+    });
+    this.FebruaryBarChartLabels = FebruaryDays;
+    this.FebruaryBarChartData[0].data = FebruarywakeTime;
+    if(February){
+      let element = document.getElementById('barFebruary');
+      element.style.display = 'block';
+    }
+    // End Of January
   }
 
   dayViewDayChart(wakeTimeInput) {
     let element = document.getElementById('doughnut');
     element.style.display = 'block';
-    this.doughnutChartData = [wakeTimeInput, (24 - wakeTimeInput)];
+    this.doughnutChartData = [(24 - wakeTimeInput), wakeTimeInput];
   }
 
 }
