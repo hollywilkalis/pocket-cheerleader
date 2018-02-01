@@ -8,26 +8,35 @@ export class SleepService {
   users: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
-    this.users = database.list('users');
-    // this.users.forEach(element => {
-    //         console.log(element[0]);
-    //     });
+    this.users = database.list('sleeps');
   }
-  getSleeps() {
+  getUsers() {
     return this.users;
   }
 
-  getUserById(userId: string) {
-    return this.database.object('users/' + userId);
+  addSleep(newSleep: Sleep) {
+    this.users.push(newSleep);
+
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+// this.users.forEach(element => {
+//         console.log(element[0]);
+//     });
 //   updateSleep(localUpdatedSleep){
 //
 // }
-
-  addSleep(newSleep: Sleep) {
-    // var userEntryInFireBase = this.getUserById(newSleep.$key);
-    // this.users.push(newSleep);
-
-  }
-
-}
+// var userEntryInFireBase = this.getUserById(newSleep.$key);
+// getUserById(userId: string) {
+//   return this.database.object('users/' + userId);
+// }

@@ -14,16 +14,66 @@ import { ChartsModule } from 'ng2-charts';
   providers: [SleepService, UserService]
 })
 export class SleepComponent implements OnInit {
+  users;
+  usersOBJ;
+  doughnutChartLabels:string[] = ['Asleep', 'Awake'];
+  doughnutChartType:string = 'doughnut';
+  doughnutChartData:number[] = [];
+  barChartLabels:string[] = [];
+  barChartType:string = 'bar';
+  barChartData:any[] = [
+    {data: [], label: 'Hours Slept'}
+  ];
+
+  constructor(private router: Router, private sleepService: SleepService) { }
+
+  ngOnInit() {
+    this.users = this.sleepService.getUsers();
+    this.users.subscribe(dataLastEmittedFromObserver => {
+      this.usersOBJ = dataLastEmittedFromObserver;
+      console.log(this.usersOBJ);
+      this.inputFormData();
+    });
+  }
 
   submitForm(month: number, day: number, startTime: number, wakeTime: number, quality: number) {
-    var newSleepToAdd: Sleep = new Sleep(month, day, startTime, wakeTime, quality);
-    const doughnutChartLabels:string[] = ['Asleep', 'Awake'];
-    const doughnutChartType:string = 'doughnut';
-    let doughnutChartData:number[] = [];
-    console.log(newSleepToAdd);
+
+  }
+
+  inputFormData() {
+    this.usersOBJ.forEach(function(userData){
+      console.log(userData);
+    });
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // submitForm(month: number, day: number, startTime: number, wakeTime: number, quality: number) {
+  //   var newSleepToAdd: Sleep = new Sleep(month, day, startTime, wakeTime, quality);
+  //   const doughnutChartLabels:string[] = ['Asleep', 'Awake'];
+  //   const doughnutChartType:string = 'doughnut';
+  //   let doughnutChartData:number[] = [];
+  //   console.log(newSleepToAdd);
     // this.sleepService.addSleep(newSleepToAdd);
     // console.log(this.barChartData[0].data[30]);
-    this.barChartData[0].data.splice(30, 1, wakeTime);
+    // this.barChartData[0].data.splice(30, 1, wakeTime);
     // console.log(this.barChartData[0].data[30]);
     // let xIndex = parseInt(wakeTime);
     // let yIndex = 24 - xIndex;
@@ -31,7 +81,7 @@ export class SleepComponent implements OnInit {
     // console.log(yIndex);
     // doughnutChartData.push(xIndex, yIndex);
     // console.log(doughnutChartData);
-  };
+  // };
   // Doughnut
 
 // events
@@ -43,18 +93,18 @@ export class SleepComponent implements OnInit {
 //   console.log(e);
 // }
 //end doughnut, start bar
-public barChartOptions:any = {
-  scaleShowVerticalLines: false,
-  responsive: true
-};
-public barChartLabels:string[] = ['1', '2', '3', '4', '5', '6', '7', '8','9','10','11', '12', '13', '14', '15', '16', '17', '18','19','20','21', '22', '23', '24', '25', '26', '27', '28','29','30','31'];
+// public barChartOptions:any = {
+//   scaleShowVerticalLines: false,
+//   responsive: true
+// };
+// public barChartLabels:string[] = ['1', '2', '3', '4', '5', '6', '7', '8','9','10','11', '12', '13', '14', '15', '16', '17', '18','19','20','21', '22', '23', '24', '25', '26', '27', '28','29','30','31'];
 
-public barChartType:string = 'bar';
-public barChartLegend:boolean = true;
+// public barChartType:string = 'bar';
+// public barChartLegend:boolean = true;
 
-public barChartData:any[] = [
-  {data: [8, 10, 6, 5, 8, 12, 4.5, 8, 8, 10, 9, 8.5, 5, 8, 12, 5.5, 6, 8, 8, 9, 8.5, 10, 4, 8, 12, 10, 8, 8, 6, 7, 0, 0, 23], label: 'Hours Slept'}
-];
+// public barChartData:any[] = [
+  // {data: [8, 10, 6, 5, 8, 12, 4.5, 8, 8, 10, 9, 8.5, 5, 8, 12, 5.5, 6, 8, 8, 9, 8.5, 10, 4, 8, 12, 10, 8, 8, 6, 7, 0, 0, 23], label: 'Hours Slept'}
+// ];
 
 // events
 // public chartClicked(e:any):void {
@@ -80,45 +130,17 @@ public barChartData:any[] = [
 //   this.barChartData = clone;
 // }
 // lineChart
-public lineChartData:Array<any> = [
-  [8.1, 7.2, 6.5, 6.7, 7.9, 7.2, 8.1, 7.8, 7.7, 7.8, 7.1, 7.4, 7.6]
-];
-public lineChartLabels:Array<any> = ['Hours Slept', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January'];
-public lineChartType:string = 'line';
+// public lineChartData:Array<any> = [
+//   [8.1, 7.2, 6.5, 6.7, 7.9, 7.2, 8.1, 7.8, 7.7, 7.8, 7.1, 7.4, 7.6]
+// ];
+// public lineChartLabels:Array<any> = ['Hours Slept', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January'];
+// public lineChartType:string = 'line';
 
-
-
-
-  sleeps: Sleep[];
-  selectedSleep = null;
-
-
-
-  constructor(private router: Router, private sleepService: SleepService) { }
-
-
-  // goToDetailPage(clickedSleep: Sleep) {
-  //   console.log(clickedSleep);
-  //   // this.router.navigate(['sleep', clickedSleep.$key]);
-  // };
-
-
-  ngOnInit() {
-    // this.sleeps = this.sleepService.getSleeps();
-
-  }
-
-
-}
-
-
-
-
-
-
-
-
-
+  //
+  // sleeps: Sleep[];
+  // selectedSleep = null;
+  //
+  //
 
 //old version
 // export class SleepComponent implements OnInit {
