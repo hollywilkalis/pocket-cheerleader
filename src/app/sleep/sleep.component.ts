@@ -14,23 +14,22 @@ import { ChartsModule } from 'ng2-charts';
   providers: [SleepService, UserService]
 })
 export class SleepComponent implements OnInit {
-
+  public doughnutChartLabels:string[] = ['Asleep', 'Awake'];
+  public doughnutChartData:number[] = [8, 16];
+  public doughnutChartType:string = 'doughnut';
+  public x: number;
+  public y: number;
   submitForm(month: number, day: number, startTime: number, wakeTime: number, quality: number) {
     var newSleepToAdd: Sleep = new Sleep(month, day, startTime, wakeTime, quality);
-    const doughnutChartLabels:string[] = ['Asleep', 'Awake'];
-    const doughnutChartType:string = 'doughnut';
-    let doughnutChartData:number[] = [];
     console.log(newSleepToAdd);
-    // this.sleepService.addSleep(newSleepToAdd);
-    // console.log(this.barChartData[0].data[30]);
+    this.sleepService.addSleep(newSleepToAdd);
+    console.log(this.barChartData[0].data[30]);
     this.barChartData[0].data.splice(30, 1, wakeTime);
-    // console.log(this.barChartData[0].data[30]);
-    // let xIndex = parseInt(wakeTime);
-    // let yIndex = 24 - xIndex;
-    // console.log(xIndex);
-    // console.log(yIndex);
-    // doughnutChartData.push(xIndex, yIndex);
-    // console.log(doughnutChartData);
+    console.log(this.barChartData[0].data[30]);
+    this.x = wakeTime;
+    this.y = 24 - this.x;
+    console.log(this.x);
+    console.log(this.y);
   };
   // Doughnut
 
@@ -104,7 +103,7 @@ public lineChartType:string = 'line';
 
 
   ngOnInit() {
-    // this.sleeps = this.sleepService.getSleeps();
+    // this.users = this.sleepService.getSleeps();
 
   }
 

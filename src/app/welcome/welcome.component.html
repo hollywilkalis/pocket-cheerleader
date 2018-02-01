@@ -5,15 +5,11 @@
     <div class="users-box">
       <div *ngFor="let user of users | async" (click)="goToDetailPage(user)">
         <div class="users-box-output">
-          <h3><em>{{user.firstName}}</em></h3>
+          <h3><em>{{sleeps?.firstName}}</em></h3>
+          <h3><em>{{sleeps?.sleep[0].day}}</em></h3>
         </div>
       </div>
     </div>
 
   </div>
 </div>
-
-
-
-
- <!-- <h3><em>{{user?.sleep[0].day}}</em></h3> -->
