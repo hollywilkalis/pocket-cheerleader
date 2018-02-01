@@ -7,6 +7,9 @@ import { Quiz } from './quiz.model';
   styleUrls: ['./quiz.component.scss']
 })
 export class QuizComponent implements OnInit {
+
+  selectedQuestion = null;
+
   questions = [
       {name:'I do not keep a regular sleep schedule.', value:'1', checked:false, suggestion: "Going to sleep and getting up around the same time every day will help set your body's internal clock, leading to a better sleep."},
       {name:'I often keep the light on.', value:'2', checked:false, suggestion: "STOP KEEPING THE LIGHT ON"},
@@ -26,9 +29,19 @@ export class QuizComponent implements OnInit {
     //             .filter(opt => opt.checked)
     //             .map(opt => opt.value)
     // }
-  constructor() { }
+  constructor() {}
+
+  checkedYes(question){
+    console.log(question.suggestion);
+  }
+
+  // checkedYes(clickedQuestion){
+  //   this.selectedQuestion = clickedQuestion;
+  //   console.log(this.questions);
+  // }
 
   ngOnInit() {
+    // if checked or checked===true, show question.suggestion
   }
 
 

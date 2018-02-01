@@ -7,13 +7,14 @@
     <div *ngFor="let question of questions">
         <label>
           <input type="checkbox"
-              [checked]="answerYes" (change)="answerYes = !answerYes" />
+              (click)="checkedYes(question)"
+              [checked]="answerYes" />
             <!-- <input type="checkbox"
                    name="question"
                    value="{{question.value}}"
                    [(ngModel)]="question.checked"/> -->
             {{question.name}}<br>
-            {{question.suggestion}}
+            <!-- {{question.suggestion}} -->
         </label>
     </div>
 </div>
