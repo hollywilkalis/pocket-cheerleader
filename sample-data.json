@@ -1,0 +1,45 @@
+{  "firstName": "Griffin",
+    "userName": "griffinl",
+    "password": "password1234",
+    "sleeps": [{
+      "month": 1,
+      "day": 3,
+      "startTime": 22,
+      "wakeTime": 10,
+      "quality": 3
+      }, {
+      "month": 1,
+      "day": 4,
+      "startTime": 12,
+      "wakeTime": 8,
+      "quality": 2
+      }, {
+      "month": 1,
+      "day": 5,
+      "startTime": 9,
+      "wakeTime": 4,
+      "quality": 1
+      },
+      {
+      "month": 1,
+      "day": 6,
+      "startTime": 8,
+      "wakeTime": 10,
+      "quality": 2
+      },
+      {
+      "month": 1,
+      "day": 7,
+      "startTime": 7,
+      "wakeTime": 11,
+      "quality": 3
+      },
+      {
+      "month": 1,
+      "day": 3,
+      "startTime": 10 ,
+      "wakeTime": 10,
+      "quality": 3
+      }]
+
+}

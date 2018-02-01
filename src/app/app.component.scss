@@ -1,4 +1,8 @@
 @import "../sass/master";
+@font-face {
+  font-family: cute;
+  src:url("/../../assets/fonts/cute-heavy.ttf");
+}
 .ham-button {
   display: none;
   transition: 1s;
@@ -27,6 +31,7 @@
       .nav-button {
         position: absolute;
         text-align: center;
+        color: white;
       }
     }
   }
@@ -128,6 +133,7 @@
         height: 65px;
         .nav-button {
           background-color: white;
+          color: black;
           width: 200px;
           padding: 5px 0px;
           border: 5px inset black;
