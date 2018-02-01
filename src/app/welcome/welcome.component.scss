@@ -13,7 +13,7 @@
     border: 10px inset #bf2655;
     background-color: rgba(255, 255, 255, 0.28);
     .users-box {
-      overflow: scroll;
+      overflow:  auto;
       color: #8e8d8a;
       border: 2px solid white;
       height: 160px;
@@ -43,5 +43,20 @@
       border: 2px solid white;
       height: 160px;
     }
+  }
+}
+@media only screen and (min-width: 1024px)  {
+  .wellcome-container {
+    height: calc(100vh - 65px);
+  }
+}
+@media only screen and (min-width: 810px) and (max-width: 1023px)  {
+  .wellcome-container {
+    height: calc(100vh - 65px);
+  }
+}
+@media only screen and (max-width: 809px) {
+  .wellcome-container {
+    height: calc(100vh - 28px);
   }
 }

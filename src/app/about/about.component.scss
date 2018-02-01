@@ -1,0 +1,22 @@
+.about-container {
+  background-image: url("/../../assets/img/about.jpeg");
+  background-repeat: no-repeat;
+  background-position:  top;
+  background-size: cover;
+  width: 100%;
+}
+@media only screen and (min-width: 1024px)  {
+  .about-container {
+    height: calc(100vh - 65px);
+  }
+}
+@media only screen and (min-width: 810px) and (max-width: 1023px)  {
+  .about-container {
+    height: calc(100vh - 65px);
+  }
+}
+@media only screen and (max-width: 809px) {
+  .about-container {
+    height: calc(100vh - 28px);
+  }
+}
