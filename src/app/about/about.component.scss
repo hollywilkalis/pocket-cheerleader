@@ -4,6 +4,23 @@
   background-position:  top;
   background-size: cover;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .sheep-box {
+    display: flex;
+    .sheep-holder {
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+  .about-box {
+    background-color: rgba(255, 255, 255, 0.52);
+    width: 85%;
+    height: 80vh;
+  }
 }
 @media only screen and (min-width: 1024px)  {
   .about-container {
